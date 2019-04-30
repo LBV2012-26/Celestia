@@ -4088,7 +4088,7 @@ bool CelestiaCore::initSimulation(const fs::path& configFileName,
         fatalError(_("Cannot read star database."), false);
         return false;
     }
-
+    aDB.getStarOctree()->normalize(true);
 
     /***** Load the deep sky catalogs *****/
 
@@ -4110,6 +4110,7 @@ bool CelestiaCore::initSimulation(const fs::path& configFileName,
             warning(fmt::sprintf(_("Cannot read Deep Sky Objects database %s.\n"), file));
         }
     }
+    aDB.getDsoOctree()->normalize(true);
 
     // Next, read all the deep sky files in the extras directories
     for (const auto& dir : config->extrasDirs)
