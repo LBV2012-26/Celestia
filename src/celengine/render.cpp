@@ -6762,9 +6762,10 @@ void Renderer::renderPointStars(const AstroDatabase& aDB,
     else
         starRenderer.starVertexBuffer->startSprites();
 
-    m_starProcStats.objects = 0;
-    m_starProcStats.height = 0;
-    m_starProcStats.nodes = 0;
+    m_starProcStats.reset();
+    m_starProcStats.selection = m_selected;
+    m_starProcStats.obsPos = obsPos;
+    m_starProcStats.limit = faintestMagNight;
     processVisibleStars(
         aDB.getStarOctree(),
         starRenderer,
@@ -7042,9 +7043,9 @@ void Renderer::renderDeepSkyObjects(const Universe&  universe,
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 
-    m_dsoProcStats.objects = 0;
-    m_dsoProcStats.height = 0;
-    m_dsoProcStats.nodes = 0;
+    m_dsoProcStats.reset();
+    m_dsoProcStats.selection = m_selected;
+    m_dsoProcStats.limit = 2 * faintestMagNight;
     processVisibleDsos(
         aDB->getDsoOctree(),
         dsoRenderer,

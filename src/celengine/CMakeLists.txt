@@ -66,6 +66,7 @@ set(CELENGINE_SOURCES
   lodspheremesh.cpp
   lodspheremesh.h
   luminobj.h
+  luminobj.cpp
   marker.cpp
   marker.h
   meshmanager.cpp
