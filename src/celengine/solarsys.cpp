@@ -1280,7 +1280,7 @@ bool LoadSolarSystemObjects(istream& in,
             else
             {
                 errorMessagePrelude(tokenizer);
-                fmt::fprintf(cerr, _("parent body '%s' of '%s' not found.\n"), parentName, primaryName);
+                fmt::fprintf(cerr, _("parent body '%s' of location '%s' not found.\n"), parentName, primaryName);
             }
         }
         delete objectDataValue;
