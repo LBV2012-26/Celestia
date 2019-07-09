@@ -47,6 +47,7 @@ public:
     bool removeName(const NameInfo&, bool = true);
     void removeNames(bool = true);
     const NameInfo* getNameInfo(const Name &name) const;
+    std::string getNames(bool = true) const;
 
 // Part from legacy CatEntry
 public:
