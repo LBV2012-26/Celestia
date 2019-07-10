@@ -23,7 +23,8 @@ AstroObject *AstroDatabase::getObject(AstroCatalog::IndexNumber nr) const
 
 AstroObject *AstroDatabase::getObject(const Name &name, bool tryGreek, bool smart) const
 {
-    AstroObject *obj = m_nameIndex.getObjectByName(name, tryGreek);
+    const NameInfo *info = smart ? m_nameIndex.getNameInfo(name, tryGreek, false, true) : m_nameIndex.getNameInfo(name, tryGreek);
+    AstroObject *obj = info == nullptr ? nullptr : (AstroObject*)info->getObject();
     if (obj != nullptr)
         return obj;
     if (smart)

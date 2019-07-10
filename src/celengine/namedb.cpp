@@ -53,6 +53,14 @@ const NameInfo *NameDatabase::getNameInfo(const Name& name, bool greek, bool i18
     return nullptr;
 }
 
+const NameInfo *NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n, bool fallback) const
+{
+    const NameInfo *info = getNameInfo(name, greek, i18n);
+    if (info == nullptr && fallback)
+        return getNameInfo(name, greek, !i18n);
+    return info;
+}
+
 AstroObject *NameDatabase::getObjectByName(const Name& name, bool greek) const
 {
     const NameInfo *info = getNameInfo(name, greek);
