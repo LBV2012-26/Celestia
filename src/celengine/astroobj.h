@@ -33,8 +33,8 @@ public:
     void addNames(const std::string&, bool = true);
     bool addAlias(const std::string& name, const std::string& domain = string()) { return addName(name, domain, false); }
     bool addAlias(NameInfo &info) { return addName(info, false); }
-    const Name &getName(bool i18n = false) const { return i18n ? m_primaryName.getLocalized() : m_primaryName.getCanon(); }
-    const Name &getLocalizedName() const { return m_primaryName.getLocalized(); }
+    const Name getName(bool i18n = false) const { return i18n ? m_primaryName.getLocalized() : m_primaryName.getCanon(); }
+    const Name getLocalizedName() const { return m_primaryName.getLocalized(); }
     bool hasName(const Name& name) const;
     bool hasName(const std::string& name) const;
     bool hasName() const { return !m_primaryName.getCanon().empty(); }
