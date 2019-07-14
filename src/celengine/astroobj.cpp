@@ -16,9 +16,8 @@ Selection AstroObject::toSelection()
     return Selection(this);
 }
 
-bool AstroObject::addName(NameInfo &info, bool setPrimary, bool updateDB)
+bool AstroObject::addName(SharedConstNameInfo info, bool setPrimary, bool updateDB)
 {
-    info.setObject(this);
     m_nameInfos.insert(info);
     if (setPrimary)
         m_primaryName = info;
@@ -29,13 +28,13 @@ bool AstroObject::addName(NameInfo &info, bool setPrimary, bool updateDB)
 
 bool AstroObject::addName(const string &name, const string& domain, bool setPrimary, bool updateDB)
 {
-    NameInfo info(name, domain);
+    SharedConstNameInfo info = NameInfo::createShared(name, domain, this);
     return addName(info, setPrimary, updateDB);
 }
 
 bool AstroObject::addName(const Name &name, const string& domain, bool setPrimary, bool updateDB)
 {
-    NameInfo info(name, domain);
+    SharedConstNameInfo info = NameInfo::createShared(name, domain, this);
     return addName(info, setPrimary, updateDB);
 }
 
@@ -56,7 +55,7 @@ void AstroObject::addNames(const string &names, bool updateDB) // string contain
         string name = names.substr(startPos, length);
         if (!name.empty())
         {
-            name = ReplaceGreekLetterAbbr(name);
+//             name = ReplaceGreekLetterAbbr(name);
             addName(name, "", true, updateDB);
 //             fmt::fprintf(clog, "Name \"%s\" added.\n", name);
         }
@@ -64,13 +63,29 @@ void AstroObject::addNames(const string &names, bool updateDB) // string contain
     }
 }
 
+const Name AstroObject::getName(bool i18n) const
+{
+    if (m_primaryName)
+        return i18n ? m_primaryName->getLocalized() : m_primaryName->getCanon();
+    else
+        return Name();
+}
+
+const Name AstroObject::getLocalizedName() const
+{
+    if (m_primaryName)
+        return m_primaryName->getLocalized();
+    else
+        return Name();
+}
+
 bool AstroObject::removeName(const Name& name, bool updateDB)
 {
     if (!m_db)
     {
-        for(NameInfoSet::iterator it = m_nameInfos.begin(); it != m_nameInfos.end(); ++it)
+        for(SharedNameInfoSet::iterator it = m_nameInfos.begin(); it != m_nameInfos.end(); ++it)
         {
-            if (it->getCanon() == name)
+            if ((*it)->getCanon() == name)
             {
                 m_nameInfos.erase(it);
                 return true;
@@ -78,11 +93,11 @@ bool AstroObject::removeName(const Name& name, bool updateDB)
         }
         return false;
     }
-    const NameInfo *info = m_db->getNameInfo(name);
-    return removeName(*info, updateDB);
+    SharedConstNameInfo info = m_db->getNameInfo(name);
+    return removeName(info, updateDB);
 }
 
-bool AstroObject::removeName(const NameInfo& info, bool updateDB)
+bool AstroObject::removeName(SharedConstNameInfo info, bool updateDB)
 {
     if (updateDB && m_db != nullptr)
         m_db->removeName(info);
@@ -94,32 +109,32 @@ void AstroObject::removeNames(bool updateDB)
 {
     do
     {
-        NameInfoSet::iterator it = m_nameInfos.begin();
+        SharedNameInfoSet::iterator it = m_nameInfos.begin();
         if (it != m_nameInfos.end())
             removeName(*it, updateDB);
     }
     while(m_nameInfos.size());
 }
 
-NameInfoSet::iterator AstroObject::getNameInfoIterator(const Name &name) const
+SharedNameInfoSet::iterator AstroObject::getNameInfoIterator(const Name &name) const
 {
-    NameInfoSet::iterator it;
+    SharedNameInfoSet::iterator it;
     for(it = m_nameInfos.begin(); it != m_nameInfos.end(); ++it)
     {
-        if (it->getCanon() == name)
+        if ((*it)->getCanon() == name)
             return it;
     }
     return it;
 }
 
-const NameInfo* AstroObject::getNameInfo(const Name &name) const
+SharedConstNameInfo AstroObject::getNameInfo(const Name &name) const
 {
     if (!m_db)
     {
-        NameInfoSet::iterator it = getNameInfoIterator(name);
+        SharedNameInfoSet::iterator it = getNameInfoIterator(name);
         if (it == m_nameInfos.end())
             return nullptr;
-        return (NameInfo*)(&(*it));
+        return *it;
     }
     else
     {
@@ -134,7 +149,7 @@ string AstroObject::getNames(bool i18n) const
     {
         if (!ret.empty())
             ret += " / ";
-        ret += i18n ? info.getLocalized() : info.getCanon();
+        ret += i18n ? info->getLocalized() : info->getCanon();
     }
     return ret;
 }

@@ -10,7 +10,7 @@ uint32_t NameDatabase::getNameCount() const
     return m_nameIndex.size();
 }
 
-bool NameDatabase::add(const NameInfo &info, bool overwrite)
+bool NameDatabase::add(SharedConstNameInfo info, bool overwrite)
 {
     /*cout << "NameDatabase::add\n";
     const Name &name = info.getCanon();
@@ -24,50 +24,53 @@ bool NameDatabase::add(const NameInfo &info, bool overwrite)
     else
         cout << "Name not null\n";
     cout << "test passed\n";*/
-    if (info.getCanon().empty() || (!overwrite && m_nameIndex.find(info.getCanon()) != m_nameIndex.end()))
+    if (info->getCanon().empty() || (!overwrite && m_nameIndex.find(info->getCanon()) != m_nameIndex.end()))
+    {
+        fmt::fprintf(cerr, "Refusing to add canonical name \"%s\"!\n", info->getCanon().str());
         return false;
-    m_nameIndex[info.getCanon()] = info;
+    }
+    m_nameIndex[info->getCanon()] = info;
     return true;
 }
 
-bool NameDatabase::addLocalized(const NameInfo &info, bool overwrite)
+bool NameDatabase::addLocalized(SharedConstNameInfo info, bool overwrite)
 {
-    if (!info.hasLocalized() || (!overwrite && m_localizedIndex.find(info.getLocalized()) != m_localizedIndex.end()))
+    if (!info->hasLocalized() || (!overwrite && m_localizedIndex.find(info->getLocalized()) != m_localizedIndex.end()))
         return false;
-    m_localizedIndex[info.getLocalized()] = info;
+    m_localizedIndex[info->getLocalized()] = info;
     return true;
 }
 
 void NameDatabase::erase(const Name& name)
 {
-    NameMap::iterator it = m_nameIndex.find(name);
+    SharedNameMap::iterator it = m_nameIndex.find(name);
     if (it == m_nameIndex.end())
         return;
-    m_localizedIndex.erase(it->second.getLocalized());
+    m_localizedIndex.erase(it->second->getLocalized());
     m_nameIndex.erase(name);
 }
 
-const NameInfo *NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n) const
+SharedConstNameInfo NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n) const
 {
-    const NameMap &map = i18n ? m_localizedIndex : m_nameIndex;
+    const SharedNameMap &map = i18n ? m_localizedIndex : m_nameIndex;
 
-    NameMap::const_iterator iter = map.find(name);
+    SharedNameMap::const_iterator iter = map.find(name);
 
     if (iter != map.end())
-        return &iter->second;
+        return iter->second;
     if (greek)
     {
         string fname = ReplaceGreekLetterAbbr(name.str());
         iter = map.find(fname);
         if (iter != map.end())
-            return &iter->second;
+            return iter->second;
     }
     return nullptr;
 }
 
-const NameInfo *NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n, bool fallback) const
+SharedConstNameInfo NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n, bool fallback) const
 {
-    const NameInfo *info = getNameInfo(name, greek, i18n);
+    SharedConstNameInfo info = getNameInfo(name, greek, i18n);
     if (info == nullptr && fallback)
         return getNameInfo(name, greek, !i18n);
     return info;
@@ -75,7 +78,7 @@ const NameInfo *NameDatabase::getNameInfo(const Name& name, bool greek, bool i18
 
 AstroObject *NameDatabase::getObjectByName(const Name& name, bool greek) const
 {
-    const NameInfo *info = getNameInfo(name, greek);
+    SharedConstNameInfo info = getNameInfo(name, greek);
     if (info == nullptr)
         return nullptr;
     return (AstroObject*)info->getObject();
@@ -97,14 +100,14 @@ std::vector<Name> NameDatabase::getCompletion(const std::string& name, bool gree
     else fname = name;
     int name_length = UTF8Length(fname);
 
-    for (NameMap::const_iterator iter = m_nameIndex.begin(); iter != m_nameIndex.end(); ++iter)
+    for (SharedNameMap::const_iterator iter = m_nameIndex.begin(); iter != m_nameIndex.end(); ++iter)
     {
         if (!UTF8StringCompare(iter->first.str(), fname, name_length, true))
         {
             completion.push_back(iter->first);
         }
     }
-    for (NameMap::const_iterator iter = m_localizedIndex.begin(); iter != m_localizedIndex.end(); ++iter)
+    for (SharedNameMap::const_iterator iter = m_localizedIndex.begin(); iter != m_localizedIndex.end(); ++iter)
     {
         if (!UTF8StringCompare(iter->first.str(), fname, name_length, true))
         {

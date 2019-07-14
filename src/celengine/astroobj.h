@@ -23,30 +23,30 @@ public:
 // Names support
 
  protected:
-    NameInfoSet m_nameInfos;
-    NameInfo m_primaryName;
-    NameInfoSet::iterator getNameInfoIterator(const Name &) const;
+    SharedNameInfoSet m_nameInfos;
+    SharedConstNameInfo m_primaryName;
+    SharedNameInfoSet::iterator getNameInfoIterator(const Name &) const;
  public:
     bool addName(const std::string&, const std::string& = std::string(), bool = true, bool = true);
     bool addName(const Name&, const std::string& = std::string(), bool = true, bool = true);
-    bool addName(NameInfo&, bool = true, bool = true);
+    bool addName(SharedConstNameInfo, bool = true, bool = true);
     void addNames(const std::string&, bool = true);
     bool addAlias(const std::string& name, const std::string& domain = string()) { return addName(name, domain, false); }
-    bool addAlias(NameInfo &info) { return addName(info, false); }
-    const Name getName(bool i18n = false) const { return i18n ? m_primaryName.getLocalized() : m_primaryName.getCanon(); }
-    const Name getLocalizedName() const { return m_primaryName.getLocalized(); }
+    bool addAlias(SharedConstNameInfo info) { return addName(info, false); }
+    const Name getName(bool i18n = false) const;
+    const Name getLocalizedName() const;
     bool hasName(const Name& name) const;
     bool hasName(const std::string& name) const;
-    bool hasName() const { return !m_primaryName.getCanon().empty(); }
+    bool hasName() const { return m_primaryName && !m_primaryName->getCanon().empty(); }
     bool hasLocalizedName(const Name& name) const;
     bool hasLocalizedName(const std::string& name) const;
-    bool hasLocalizedName() { return m_primaryName.hasLocalized(); }
-    const NameInfoSet& getNameInfos() const { return m_nameInfos; }
+    bool hasLocalizedName() { return m_primaryName && m_primaryName->hasLocalized(); }
+    const SharedNameInfoSet& getNameInfos() const { return m_nameInfos; }
     bool removeName(const std::string&, bool = true);
     bool removeName(const Name&, bool = true);
-    bool removeName(const NameInfo&, bool = true);
+    bool removeName(SharedConstNameInfo, bool = true);
     void removeNames(bool = true);
-    const NameInfo* getNameInfo(const Name &name) const;
+    SharedConstNameInfo getNameInfo(const Name &name) const;
     std::string getNames(bool = true) const;
 
 // Part from legacy CatEntry

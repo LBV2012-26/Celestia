@@ -80,24 +80,31 @@ struct NameComp
     size_t operator()(const Name & n1, const Name &n2) const { return n1.hash() == n2.hash(); }
 };
 */
+class NameInfo;
+
+typedef std::shared_ptr<NameInfo> SharedNameInfo;
+typedef std::shared_ptr<const NameInfo> SharedConstNameInfo;
+
 class NameInfo
 {
     Name m_canonical;
     Name m_localized;
     Name m_domain;
     AstroObject *m_object = { nullptr };
- public:
     NameInfo() = default;
-    NameInfo(const std::string& val, const Name& domain)
+ public:
+    NameInfo(const std::string& val, const Name domain, AstroObject *o, bool greek = true)
     {
-        std::string _val = ReplaceGreekLetterAbbr(val);
+        std::string _val = greek ? ReplaceGreekLetterAbbr(val) : val;
         m_canonical = _val;
         m_domain = domain;
+        m_object = o;
     }
-    NameInfo(const Name& val, const Name& domain)
+    NameInfo(const Name& val, const Name domain,  AstroObject *o)
     {
         m_canonical = val;
         m_domain = domain;
+        m_object = o;
     }
     NameInfo(const NameInfo &other)
     {
@@ -113,6 +120,8 @@ class NameInfo
     const AstroObject *getObject() const { return m_object; }
     AstroObject* getObject() { return m_object; }
     void setObject(AstroObject *o) { m_object = o; }
+    static SharedConstNameInfo createShared(const Name, const Name, AstroObject *);
+    static SharedConstNameInfo createShared(const std::string&, const Name, AstroObject *, bool = true);
 };
 
 bool inline operator==(const NameInfo &n1, const NameInfo &n2)
@@ -136,5 +145,7 @@ bool inline operator>(const NameInfo &n1, const NameInfo &n2)
 }
 
 typedef std::set<NameInfo> NameInfoSet;
+typedef std::set<SharedConstNameInfo> SharedNameInfoSet;
 typedef std::set<Name> NameSet;
 typedef std::map<Name, NameInfo> NameMap;
+typedef std::map<Name, SharedConstNameInfo > SharedNameMap;

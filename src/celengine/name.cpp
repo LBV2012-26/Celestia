@@ -33,10 +33,6 @@ void NameInfo::translate()
     else
     {
         m_localized = l;
-        if (m_object != nullptr && m_object->getAstroDatabase() != nullptr)
-        {
-            m_object->getAstroDatabase()->addLocalizedName(*this);
-        }
     }
 }
 
@@ -59,6 +55,16 @@ const Name NameInfo::getLocalized(bool fallback) const
     return Name();
 }
 
-// const Name NameInfo::
+SharedConstNameInfo NameInfo::createShared(const string& name, const Name domain, AstroObject *o, bool greek)
+{
+//     fmt::fprintf(cout, "Creation shared name from string \"%s\"\n", name);
+    return make_shared<const NameInfo>(name, domain, o, greek);
+}
+
+SharedConstNameInfo NameInfo::createShared(const Name name, const Name domain, AstroObject *o)
+{
+//     fmt::fprintf(cout, "Creation shared name from Name \"%s\"\n", name.str());
+    return make_shared<const NameInfo>(name, domain, o);
+}
 
 const string Name::m_empty = "";

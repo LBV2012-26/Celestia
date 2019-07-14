@@ -1179,7 +1179,7 @@ void PlanetarySystem::removeBodyFromNameIndex(const Body* body)
     auto names = body->getNameInfos();
     for (const auto& name : names)
     {
-        m_nameDB.erase(name.getCanon());
+        m_nameDB.erase(name->getCanon());
     }
 }
 
@@ -1215,8 +1215,8 @@ void PlanetarySystem::replaceBody(Body* oldBody, Body* newBody)
  */
 Body* PlanetarySystem::find(const string& _name, bool deepSearch, bool i18n) const
 {
-    const NameInfo *ni = m_nameDB.getNameInfo(_name, false, i18n, true);
-    if (ni != nullptr)
+    SharedConstNameInfo ni = m_nameDB.getNameInfo(_name, false, i18n, true);
+    if (ni)
         return (Body*)ni->getObject();
 
     if (deepSearch)
