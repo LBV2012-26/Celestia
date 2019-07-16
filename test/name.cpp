@@ -4,6 +4,7 @@
 #include <cassert>
 #include <fmt/printf.h>
 #include <celengine/name.h>
+#include <celengine/namedb.h>
 #include <celutil/utf8.h>
 
 using namespace std;
@@ -36,14 +37,14 @@ void dump_db(const NameDatabase &nd, const std::string &comp)
 */
 int main()
 {
-    Name n1("Ab");
+/*    Name n1("Ab");
     Name n2("Bc");
     Name n3("Cd");
     fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());
     n1 = n2;
     fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());
     n1 = n3;
-    fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());
+    fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());*/
     /*
     NameDatabase nd;
 
@@ -74,4 +75,12 @@ int main()
     assert(nd.getCatalogNumberByName(ReplaceGreekLetterAbbr("OME Ret")) == 2);
     assert(nd.getNameByCatalogNumber(1) == ReplaceGreekLetterAbbr("ALF Cen"));
     assert(nd.getNameByCatalogNumber(2) == ReplaceGreekLetterAbbr("OME Ret"));*/
+    NameDatabase ndb;
+    SharedConstNameInfo info = NameInfo::createShared(string("Kepler-16"), Name(""), nullptr);
+    const Name &name = info->getCanon();
+    cout << name.str() << endl;
+    ndb.add(info);
+    SharedConstNameInfo info2 = ndb.getNameInfo(name);
+    if (info2)
+        cout << info2->getCanon().str() << endl;
 }
