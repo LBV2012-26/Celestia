@@ -2,6 +2,10 @@
 #pragma once
 
 #include <memory>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <queue>
 #include <unordered_set>
 #include <unordered_map>
 #include <set>
@@ -11,6 +15,7 @@
 #include <celutil/utf8.h>
 
 class AstroObject;
+class PlanetarySystem;
 
 class Name
 {
@@ -90,21 +95,24 @@ class NameInfo
     Name m_canonical;
     Name m_localized;
     Name m_domain;
-    AstroObject *m_object = { nullptr };
+    AstroObject *m_object { nullptr };
+    PlanetarySystem *m_system { nullptr };
     NameInfo() = default;
  public:
-    NameInfo(const std::string& val, const Name domain, AstroObject *o, bool greek = true)
+    NameInfo(const std::string& val, const Name domain, AstroObject *o, PlanetarySystem *p = nullptr, bool greek = true)
     {
         std::string _val = greek ? ReplaceGreekLetterAbbr(val) : val;
         m_canonical = _val;
         m_domain = domain;
         m_object = o;
+        m_system = p;
     }
-    NameInfo(const Name& val, const Name domain,  AstroObject *o)
+    NameInfo(const Name& val, const Name domain,  AstroObject *o, PlanetarySystem *p = nullptr)
     {
         m_canonical = val;
         m_domain = domain;
         m_object = o;
+        m_system = p;
     }
     NameInfo(const NameInfo &other)
     {
@@ -112,6 +120,7 @@ class NameInfo
         m_localized = other.m_localized;
         m_domain = other.m_domain;
         m_object = other.m_object;
+        m_system = other.m_system;
     }
     bool hasLocalized() const;
     const Name getCanon() const;
@@ -119,9 +128,20 @@ class NameInfo
     void translate();
     const AstroObject *getObject() const { return m_object; }
     AstroObject* getObject() { return m_object; }
-    void setObject(AstroObject *o) { m_object = o; }
-    static SharedConstNameInfo createShared(const Name, const Name, AstroObject *);
-    static SharedConstNameInfo createShared(const std::string&, const Name, AstroObject *, bool = true);
+    PlanetarySystem *getSystem() { return m_system; }
+    static SharedConstNameInfo createShared(const Name, const Name, AstroObject *, PlanetarySystem * = nullptr);
+    static SharedConstNameInfo createShared(const std::string&, const Name, AstroObject *, PlanetarySystem * = nullptr, bool = true);
+    static void runTranslation();
+    static void stopTranslation();
+ protected:
+    std::recursive_mutex m_mutex;
+    static std::queue<SharedNameInfo> m_trQueue;
+    static std::mutex m_trquMutex;
+    static std::condition_variable m_trquNotifier;
+    static std::thread m_trThread;
+    static void pushForTr(SharedNameInfo);
+    static SharedNameInfo popForTr();
+    static void trThread();
 };
 
 bool inline operator==(const NameInfo &n1, const NameInfo &n2)

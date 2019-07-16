@@ -325,6 +325,7 @@ CelestiaCore::~CelestiaCore()
     delete execEnv;
     delete timer;
     delete renderer;
+    delete universe;
 }
 
 void CelestiaCore::readFavoritesFile()

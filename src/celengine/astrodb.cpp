@@ -11,6 +11,13 @@ AstroDatabase::AstroDatabase() :
     m_dsoOctree(Vector3d(0, 0, 0),  OctreeNode::MaxScale, OctreeNode::MaxObjectsPerNode, nullptr)
 {
     createBuiltinCatalogs();
+    NameInfo::runTranslation();
+}
+
+AstroDatabase::~AstroDatabase()
+{
+    cout << "AstroDatabase\n";
+    NameInfo::stopTranslation();
 }
 
 AstroObject *AstroDatabase::getObject(AstroCatalog::IndexNumber nr) const

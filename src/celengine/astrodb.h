@@ -33,6 +33,8 @@ class AstroDatabase {
         MaxBuiltinCatalog = 5
     };
     static constexpr array<const char *, AstroDatabase::MaxBuiltinCatalog> CatalogPrefix  = { "HD", "Gliese", "SAO", "HIP", "TYC" };
+    AstroDatabase();
+    ~AstroDatabase();
  protected:
     MainIndex m_mainIndex;
     std::map<int, AstroCatalog*> m_catalogs;
@@ -61,8 +63,6 @@ class AstroDatabase {
     friend AstroObject;
     friend NameInfo;
  public:
-
-    AstroDatabase();
 
     AstroObject *getObject(AstroCatalog::IndexNumber) const;
     AstroObject *getObject(const Name&, bool = true, bool = true) const;
