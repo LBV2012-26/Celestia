@@ -1215,7 +1215,7 @@ void PlanetarySystem::replaceBody(Body* oldBody, Body* newBody)
  */
 Body* PlanetarySystem::find(const string& _name, bool deepSearch, bool i18n) const
 {
-    SharedConstNameInfo ni = m_nameDB.getNameInfo(_name, false, i18n, true);
+    NameInfo::SharedConstPtr ni = m_nameDB.getNameInfo(_name, false, i18n, true);
     if (ni)
         return (Body*)ni->getObject();
 

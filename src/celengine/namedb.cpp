@@ -10,7 +10,7 @@ uint32_t NameDatabase::getNameCount() const
     return m_nameIndex.size();
 }
 
-bool NameDatabase::add(SharedConstNameInfo info, bool overwrite)
+bool NameDatabase::add(NameInfo::SharedConstPtr info, bool overwrite)
 {
     /*cout << "NameDatabase::add\n";
     const Name &name = info.getCanon();
@@ -33,7 +33,7 @@ bool NameDatabase::add(SharedConstNameInfo info, bool overwrite)
     return true;
 }
 
-bool NameDatabase::addLocalized(SharedConstNameInfo info, bool overwrite)
+bool NameDatabase::addLocalized(NameInfo::SharedConstPtr info, bool overwrite)
 {
     if (!info->hasLocalized() || (!overwrite && m_localizedIndex.find(info->getLocalized()) != m_localizedIndex.end()))
         return false;
@@ -50,7 +50,7 @@ void NameDatabase::erase(const Name& name)
     m_nameIndex.erase(name);
 }
 
-SharedConstNameInfo NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n) const
+NameInfo::SharedConstPtr NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n) const
 {
     const SharedNameMap &map = i18n ? m_localizedIndex : m_nameIndex;
 
@@ -68,9 +68,9 @@ SharedConstNameInfo NameDatabase::getNameInfo(const Name& name, bool greek, bool
     return nullptr;
 }
 
-SharedConstNameInfo NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n, bool fallback) const
+NameInfo::SharedConstPtr NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n, bool fallback) const
 {
-    SharedConstNameInfo info = getNameInfo(name, greek, i18n);
+    NameInfo::SharedConstPtr info = getNameInfo(name, greek, i18n);
     if (info == nullptr && fallback)
         return getNameInfo(name, greek, !i18n);
     return info;
@@ -78,7 +78,7 @@ SharedConstNameInfo NameDatabase::getNameInfo(const Name& name, bool greek, bool
 
 AstroObject *NameDatabase::getObjectByName(const Name& name, bool greek) const
 {
-    SharedConstNameInfo info = getNameInfo(name, greek);
+    NameInfo::SharedConstPtr info = getNameInfo(name, greek);
     if (info == nullptr)
         return nullptr;
     return (AstroObject*)info->getObject();

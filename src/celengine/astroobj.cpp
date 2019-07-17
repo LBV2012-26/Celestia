@@ -16,7 +16,7 @@ Selection AstroObject::toSelection()
     return Selection(this);
 }
 
-bool AstroObject::addName(SharedConstNameInfo info, bool setPrimary, bool updateDB)
+bool AstroObject::addName(NameInfo::SharedConstPtr info, bool setPrimary, bool updateDB)
 {
     m_nameInfos.insert(info);
     if (setPrimary)
@@ -28,13 +28,13 @@ bool AstroObject::addName(SharedConstNameInfo info, bool setPrimary, bool update
 
 bool AstroObject::addName(const string &name, const string& domain, bool setPrimary, bool updateDB)
 {
-    SharedConstNameInfo info = NameInfo::createShared(name, domain, this);
+    NameInfo::SharedConstPtr info = NameInfo::createShared(name, domain, this);
     return addName(info, setPrimary, updateDB);
 }
 
 bool AstroObject::addName(const Name &name, const string& domain, bool setPrimary, bool updateDB)
 {
-    SharedConstNameInfo info = NameInfo::createShared(name, domain, this);
+    NameInfo::SharedConstPtr info = NameInfo::createShared(name, domain, this);
     return addName(info, setPrimary, updateDB);
 }
 
@@ -83,7 +83,7 @@ bool AstroObject::removeName(const Name& name, bool updateDB)
 {
     if (!m_db)
     {
-        for(SharedNameInfoSet::iterator it = m_nameInfos.begin(); it != m_nameInfos.end(); ++it)
+        for(SharedConstNameInfoSet::iterator it = m_nameInfos.begin(); it != m_nameInfos.end(); ++it)
         {
             if ((*it)->getCanon() == name)
             {
@@ -93,11 +93,11 @@ bool AstroObject::removeName(const Name& name, bool updateDB)
         }
         return false;
     }
-    SharedConstNameInfo info = m_db->getNameInfo(name);
+    NameInfo::SharedConstPtr info = m_db->getNameInfo(name);
     return removeName(info, updateDB);
 }
 
-bool AstroObject::removeName(SharedConstNameInfo info, bool updateDB)
+bool AstroObject::removeName(NameInfo::SharedConstPtr info, bool updateDB)
 {
     if (updateDB && m_db != nullptr)
         m_db->removeName(info);
@@ -109,16 +109,16 @@ void AstroObject::removeNames(bool updateDB)
 {
     do
     {
-        SharedNameInfoSet::iterator it = m_nameInfos.begin();
+        SharedConstNameInfoSet::iterator it = m_nameInfos.begin();
         if (it != m_nameInfos.end())
             removeName(*it, updateDB);
     }
     while(m_nameInfos.size());
 }
 
-SharedNameInfoSet::iterator AstroObject::getNameInfoIterator(const Name &name) const
+SharedConstNameInfoSet::iterator AstroObject::getNameInfoIterator(const Name &name) const
 {
-    SharedNameInfoSet::iterator it;
+    SharedConstNameInfoSet::iterator it;
     for(it = m_nameInfos.begin(); it != m_nameInfos.end(); ++it)
     {
         if ((*it)->getCanon() == name)
@@ -127,11 +127,11 @@ SharedNameInfoSet::iterator AstroObject::getNameInfoIterator(const Name &name) c
     return it;
 }
 
-SharedConstNameInfo AstroObject::getNameInfo(const Name &name) const
+NameInfo::SharedConstPtr AstroObject::getNameInfo(const Name &name) const
 {
     if (!m_db)
     {
-        SharedNameInfoSet::iterator it = getNameInfoIterator(name);
+        SharedConstNameInfoSet::iterator it = getNameInfoIterator(name);
         if (it == m_nameInfos.end())
             return nullptr;
         return *it;

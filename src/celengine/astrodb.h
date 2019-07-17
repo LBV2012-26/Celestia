@@ -57,8 +57,8 @@ class AstroDatabase {
 
     void createBuiltinCatalogs();
 
-    bool addName(SharedConstNameInfo);
-    bool addLocalizedName(SharedConstNameInfo);
+    bool addName(NameInfo::SharedConstPtr);
+    bool addLocalizedName(NameInfo::SharedConstPtr);
 
     friend AstroObject;
     friend NameInfo;
@@ -119,10 +119,10 @@ class AstroDatabase {
     bool addName(AstroCatalog::IndexNumber, const Name&);
     void addNames(AstroCatalog::IndexNumber, const std::string&);
 
-    SharedConstNameInfo getNameInfo(const Name& name) const { return m_nameIndex.getNameInfo(name); }
+    NameInfo::SharedConstPtr getNameInfo(const Name& name) const { return m_nameIndex.getNameInfo(name); }
 
     void removeName(const Name& name) { m_nameIndex.erase(name); }
-    void removeName(SharedConstNameInfo);
+    void removeName(NameInfo::SharedConstPtr);
     void removeNames(AstroCatalog::IndexNumber);
     void removeNames(AstroObject*);
 

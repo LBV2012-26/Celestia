@@ -60,30 +60,30 @@ const Name NameInfo::getLocalized(bool fallback) const
     return Name();
 }
 
-SharedConstNameInfo NameInfo::createShared(const string& name, const Name domain, AstroObject *o, PlanetarySystem *p, bool greek)
+NameInfo::SharedConstPtr NameInfo::createShared(const string& name, const Name domain, AstroObject *o, PlanetarySystem *p, bool greek)
 {
 //     fmt::fprintf(cout, "Creation shared name from string \"%s\"\n", name);
-    SharedNameInfo info = make_shared<NameInfo>(name, domain, o, p, greek);
+    NameInfo::SharedPtr info = make_shared<NameInfo>(name, domain, o, p, greek);
     pushForTr(info);
     return info;
 }
 
-SharedConstNameInfo NameInfo::createShared(const Name name, const Name domain, AstroObject *o, PlanetarySystem *p)
+NameInfo::SharedConstPtr NameInfo::createShared(const Name name, const Name domain, AstroObject *o, PlanetarySystem *p)
 {
 //     fmt::fprintf(cout, "Creation shared name from Name \"%s\"\n", name.str());
-    SharedNameInfo info = make_shared<NameInfo>(name, domain, o, p);
+    NameInfo::SharedPtr info = make_shared<NameInfo>(name, domain, o, p);
     pushForTr(info);
     return info;
 }
 
-void NameInfo::pushForTr(SharedNameInfo info)
+void NameInfo::pushForTr(NameInfo::SharedPtr info)
 {
     unique_lock<mutex> lock(m_trquMutex);
     m_trQueue.push(info);
     m_trquNotifier.notify_one();
 }
 
-SharedNameInfo NameInfo::popForTr()
+NameInfo::SharedPtr NameInfo::popForTr()
 {
     unique_lock<mutex> lock(m_trquMutex);
     if (m_trQueue.empty())
@@ -126,7 +126,7 @@ void NameInfo::stopTranslation()
 
 const string Name::m_empty = "";
 
-queue<SharedNameInfo> NameInfo::m_trQueue;
+queue<NameInfo::SharedPtr> NameInfo::m_trQueue;
 mutex NameInfo::m_trquMutex;
 condition_variable NameInfo::m_trquNotifier;
 thread NameInfo::m_trThread;

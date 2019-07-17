@@ -85,10 +85,6 @@ struct NameComp
     size_t operator()(const Name & n1, const Name &n2) const { return n1.hash() == n2.hash(); }
 };
 */
-class NameInfo;
-
-typedef std::shared_ptr<NameInfo> SharedNameInfo;
-typedef std::shared_ptr<const NameInfo> SharedConstNameInfo;
 
 class NameInfo
 {
@@ -99,6 +95,8 @@ class NameInfo
     PlanetarySystem *m_system { nullptr };
     NameInfo() = default;
  public:
+    typedef std::shared_ptr<NameInfo> SharedPtr;
+    typedef std::shared_ptr<const NameInfo> SharedConstPtr;
     NameInfo(const std::string& val, const Name domain, AstroObject *o, PlanetarySystem *p = nullptr, bool greek = true)
     {
         std::string _val = greek ? ReplaceGreekLetterAbbr(val) : val;
@@ -129,18 +127,18 @@ class NameInfo
     const AstroObject *getObject() const { return m_object; }
     AstroObject* getObject() { return m_object; }
     PlanetarySystem *getSystem() { return m_system; }
-    static SharedConstNameInfo createShared(const Name, const Name, AstroObject *, PlanetarySystem * = nullptr);
-    static SharedConstNameInfo createShared(const std::string&, const Name, AstroObject *, PlanetarySystem * = nullptr, bool = true);
+    static NameInfo::SharedConstPtr createShared(const Name, const Name, AstroObject *, PlanetarySystem * = nullptr);
+    static NameInfo::SharedConstPtr createShared(const std::string&, const Name, AstroObject *, PlanetarySystem * = nullptr, bool = true);
     static void runTranslation();
     static void stopTranslation();
  protected:
     std::recursive_mutex m_mutex;
-    static std::queue<SharedNameInfo> m_trQueue;
+    static std::queue<SharedPtr> m_trQueue;
     static std::mutex m_trquMutex;
     static std::condition_variable m_trquNotifier;
     static std::thread m_trThread;
-    static void pushForTr(SharedNameInfo);
-    static SharedNameInfo popForTr();
+    static void pushForTr(NameInfo::SharedPtr);
+    static NameInfo::SharedPtr popForTr();
     static void trThread();
 };
 
@@ -165,7 +163,8 @@ bool inline operator>(const NameInfo &n1, const NameInfo &n2)
 }
 
 typedef std::set<NameInfo> NameInfoSet;
-typedef std::set<SharedConstNameInfo> SharedNameInfoSet;
+typedef std::set<NameInfo::SharedPtr> SharedNameInfoSet;
+typedef std::set<NameInfo::SharedConstPtr> SharedConstNameInfoSet;
 typedef std::set<Name> NameSet;
 typedef std::map<Name, NameInfo> NameMap;
-typedef std::map<Name, SharedConstNameInfo > SharedNameMap;
+typedef std::map<Name, NameInfo::SharedConstPtr> SharedNameMap;
