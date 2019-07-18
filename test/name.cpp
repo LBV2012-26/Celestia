@@ -76,11 +76,11 @@ int main()
     assert(nd.getNameByCatalogNumber(1) == ReplaceGreekLetterAbbr("ALF Cen"));
     assert(nd.getNameByCatalogNumber(2) == ReplaceGreekLetterAbbr("OME Ret"));*/
     NameDatabase ndb;
-    SharedConstNameInfo info = NameInfo::createShared(string("Kepler-16"), Name(""), nullptr);
+    NameInfo::SharedConstPtr info = NameInfo::createShared(string("Kepler-16"), Name(""), nullptr);
     const Name &name = info->getCanon();
     cout << name.str() << endl;
     ndb.add(info);
-    SharedConstNameInfo info2 = ndb.getNameInfo(name);
+    NameInfo::SharedConstPtr info2 = ndb.getNameInfo(name);
     if (info2)
         cout << info2->getCanon().str() << endl;
 }

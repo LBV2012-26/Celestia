@@ -115,7 +115,7 @@ void showExistence(AstroDatabase &adb, const string &name, AstroObject *o = null
             if (o != obj)
             {
                 fmt::fprintf(cout, "Found object nr %u is different than reference object nr %u!\n", obj->getIndex(), o->getIndex());
-                SharedConstNameInfo info = adb.getNameInfo(name);
+                NameInfo::SharedConstPtr info = adb.getNameInfo(name);
                 fmt::fprintf(cout, "Found object name info: \"%s\"\n", info->getCanon().str());
             }
             else
@@ -243,7 +243,7 @@ int main()
     showExistence(adb, "Kepler-16");
     showExistence(adb, "Kepler-17");
     NameDatabase &ndb = adb.getNameDatabase();
-    SharedConstNameInfo info = ndb.getNameInfo("Kepler-16");
+    NameInfo::SharedConstPtr info = ndb.getNameInfo("Kepler-16");
     if (info)
         cout << info->getCanon().str() << endl;
     else
