@@ -21,24 +21,33 @@ bool AstroObject::addName(NameInfo::SharedConstPtr info, bool setPrimary, bool u
     m_nameInfos.insert(info);
     if (setPrimary)
         m_primaryName = info;
-    if (updateDB && m_db != nullptr)
-        m_db->addName(info);
+    PlanetarySystem *sys = info->getSystem();
+    if (sys == nullptr)
+    {
+        if (updateDB && m_db != nullptr)
+            m_db->addName(info);
+    }
+    else
+    {
+        sys->addName(info);
+    }
+
     return true;
 }
 
-bool AstroObject::addName(const string &name, const string& domain, bool setPrimary, bool updateDB)
+bool AstroObject::addName(const string &name, const string& domain, PlanetarySystem *sys, bool setPrimary, bool updateDB)
 {
-    NameInfo::SharedConstPtr info = NameInfo::createShared(name, domain, this);
+    NameInfo::SharedConstPtr info = NameInfo::createShared(name, domain, this, sys);
     return addName(info, setPrimary, updateDB);
 }
 
-bool AstroObject::addName(const Name &name, const string& domain, bool setPrimary, bool updateDB)
+bool AstroObject::addName(const Name &name, const string& domain, PlanetarySystem *sys, bool setPrimary, bool updateDB)
 {
-    NameInfo::SharedConstPtr info = NameInfo::createShared(name, domain, this);
+    NameInfo::SharedConstPtr info = NameInfo::createShared(name, domain, this, sys);
     return addName(info, setPrimary, updateDB);
 }
 
-void AstroObject::addNames(const string &names, bool updateDB) // string containing names separated by colon
+void AstroObject::addNames(const string &names, PlanetarySystem *sys, bool updateDB) // string containing names separated by colon
 {
     string::size_type startPos = 0;
     while (startPos != string::npos)
@@ -56,7 +65,7 @@ void AstroObject::addNames(const string &names, bool updateDB) // string contain
         if (!name.empty())
         {
 //             name = ReplaceGreekLetterAbbr(name);
-            addName(name, "", true, updateDB);
+            addName(name, "", sys, true, updateDB);
 //             fmt::fprintf(clog, "Name \"%s\" added.\n", name);
         }
         startPos = next;
@@ -99,8 +108,16 @@ bool AstroObject::removeName(const Name& name, bool updateDB)
 
 bool AstroObject::removeName(NameInfo::SharedConstPtr info, bool updateDB)
 {
-    if (updateDB && m_db != nullptr)
-        m_db->removeName(info);
+    PlanetarySystem *sys = info->getSystem();
+    if (sys == nullptr)
+    {
+        if (updateDB && m_db != nullptr)
+            m_db->removeName(info);
+    }
+    else
+    {
+        sys->removeName(info);
+    }
     m_nameInfos.erase(info);
     return true;
 }

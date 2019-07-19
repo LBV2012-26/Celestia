@@ -33,7 +33,7 @@ Body::Body(PlanetarySystem* _system, const string& _name) :
     system(_system),
     orbitVisibility(UseClassVisibility)
 {
-    addName(_name);
+    addName(_name, string(), _system);
     recomputeCullingRadius();
     system->addBody(this);
 }
@@ -1151,6 +1151,23 @@ void PlanetarySystem::removeAlias(const Body* body, const string& alias)
 }
 */
 
+void PlanetarySystem::addName(NameInfo::SharedConstPtr info)
+{
+    if (info->getSystem() == this)
+    {
+        m_nameDB.add(info);
+        m_nameDB.addLocalized(info);
+    }
+}
+
+void PlanetarySystem::removeName(NameInfo::SharedConstPtr info)
+{
+    if (info->getSystem() == this)
+    {
+        m_nameDB.erase(info->getCanon());
+    }
+}
+
 void PlanetarySystem::addBody(Body* body)
 {
     satellites.push_back(body);
@@ -1164,8 +1181,7 @@ void PlanetarySystem::addBodyToNameIndex(Body* body)
     auto names = body->getNameInfos();
     for (const auto& name : names)
     {
-        m_nameDB.add(name);
-        m_nameDB.addLocalized(name);
+        addName(name);
     }
 }
 
@@ -1179,7 +1195,7 @@ void PlanetarySystem::removeBodyFromNameIndex(const Body* body)
     auto names = body->getNameInfos();
     for (const auto& name : names)
     {
-        m_nameDB.erase(name->getCanon());
+        removeName(name);
     }
 }
 

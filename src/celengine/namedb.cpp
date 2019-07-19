@@ -12,18 +12,6 @@ uint32_t NameDatabase::getNameCount() const
 
 bool NameDatabase::add(NameInfo::SharedConstPtr info, bool overwrite)
 {
-    /*cout << "NameDatabase::add\n";
-    const Name &name = info.getCanon();
-    cout << "Canon probed\n";
-    std::shared_ptr<std::string> ptr = name.ptr();
-    cout << "Pointer probed\n";
-    bool null = !ptr;
-    cout << "null probed " << null << endl;
-    if (null)
-        cout << "Name null\n";
-    else
-        cout << "Name not null\n";
-    cout << "test passed\n";*/
     if (info->getCanon().empty() || (!overwrite && m_nameIndex.find(info->getCanon()) != m_nameIndex.end()))
     {
         fmt::fprintf(cerr, "Refusing to add canonical name \"%s\"!\n", info->getCanon().str());

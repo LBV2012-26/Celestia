@@ -215,7 +215,10 @@ std::string AstroDatabase::getObjectNames(AstroCatalog::IndexNumber nr, bool i18
 
 void AstroDatabase::removeName(NameInfo::SharedConstPtr name)
 {
-    m_nameIndex.erase(name->getCanon());
+    if (name->getSystem() == nullptr)
+        m_nameIndex.erase(name->getCanon());
+    else
+        fmt::fprintf(cerr, "Trying to remove local name \"%s\" of object nr %u!\n", name->getCanon().str(), name->getObject()->getIndex());
 }
 
 void AstroDatabase::removeNames(AstroCatalog::IndexNumber nr)
@@ -227,7 +230,11 @@ void AstroDatabase::removeNames(AstroCatalog::IndexNumber nr)
 
 void AstroDatabase::removeNames(AstroObject *obj)
 {
-    obj->removeNames();
+    for (const auto &info : obj->getNameInfos())
+    {
+        if (info->getSystem() == nullptr)
+            removeName(info);
+    }
 }
 
 bool AstroDatabase::addAstroCatalog(int id, AstroCatalog *catalog)
@@ -283,7 +290,8 @@ bool AstroDatabase::addObject(AstroObject *obj)
     m_mainIndex.insert(std::make_pair(obj->getIndex(), obj));
     for(const auto& info : obj->getNameInfos())
     {
-        m_nameIndex.add(info);
+        if (info->getSystem() == nullptr)
+            m_nameIndex.add(info);
     }
     return true;
 }

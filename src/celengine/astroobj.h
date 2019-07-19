@@ -27,12 +27,15 @@ public:
     NameInfo::SharedConstPtr m_primaryName;
     SharedConstNameInfoSet::iterator getNameInfoIterator(const Name &) const;
  public:
-    bool addName(const std::string&, const std::string& = std::string(), bool = true, bool = true);
-    bool addName(const Name&, const std::string& = std::string(), bool = true, bool = true);
-    bool addName(NameInfo::SharedConstPtr, bool = true, bool = true);
-    void addNames(const std::string&, bool = true);
-    bool addAlias(const std::string& name, const std::string& domain = string()) { return addName(name, domain, false); }
-    bool addAlias(NameInfo::SharedConstPtr info) { return addName(info, false); }
+    bool addName(const std::string&, const std::string& = std::string(), PlanetarySystem * = nullptr, bool primary = true, bool db = true);
+    bool addName(const Name&, const std::string& = std::string(), PlanetarySystem * = nullptr, bool primary = true, bool db = true);
+    bool addName(NameInfo::SharedConstPtr, bool primary = true, bool db = true);
+    void addNames(const std::string&, PlanetarySystem * = nullptr, bool db = true);
+    bool addAlias(const std::string& name, const std::string& domain = string(), PlanetarySystem *sys = nullptr, bool db = true)
+    {
+        return addName(name, domain, sys, false, db);
+    }
+    bool addAlias(NameInfo::SharedConstPtr info, bool db) { return addName(info, false, db); }
     const Name getName(bool i18n = false) const;
     const Name getLocalizedName() const;
     bool hasName(const Name& name) const;
