@@ -31,20 +31,20 @@ void dump_db(const NameDatabase &nd, const std::string &comp)
 
     std::cout << "\ngetCompletion(" << comp << "):\n";
     for (const auto &n : nd.getCompletion(comp))
-        std::cout << n << ": " << nd.getCatalogNumberByName(n) << ", " << nd.findCatalogNumberByName(n) << std::endl;
+        std::cout << n << ": " << nd.get(n) << ", " << nd.findCatalogNumberByName(n) << std::endl;
     std::cout << "=Dump End=\n";
-}
-*/
+}*/
+
 int main()
 {
-/*    Name n1("Ab");
+    Name n1("Ab");
     Name n2("Bc");
     Name n3("Cd");
     fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());
     n1 = n2;
     fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());
     n1 = n3;
-    fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());*/
+    fmt::fprintf(cout, "n1(\"%s\"), n2(\"%s\"), n3(\"%s\")\n", n1.str(), n2.str(), n3.str());
     /*
     NameDatabase nd;
 

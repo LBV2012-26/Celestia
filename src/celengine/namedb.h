@@ -16,6 +16,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <mutex>
 #include <celutil/debug.h>
 #include <celutil/util.h>
 #include <celutil/utf8.h>
@@ -47,4 +48,5 @@ class NameDatabase
  protected:
     SharedNameMap m_nameIndex;
     SharedNameMap m_localizedIndex;
+    std::recursive_mutex m_mutex;
 };

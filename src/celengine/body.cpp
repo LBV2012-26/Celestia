@@ -1156,6 +1156,13 @@ void PlanetarySystem::addName(NameInfo::SharedConstPtr info)
     if (info->getSystem() == this)
     {
         m_nameDB.add(info);
+    }
+}
+
+void PlanetarySystem::addLocalizedName(NameInfo::SharedConstPtr info)
+{
+    if (info->getSystem() == this)
+    {
         m_nameDB.addLocalized(info);
     }
 }

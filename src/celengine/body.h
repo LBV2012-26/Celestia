@@ -70,6 +70,7 @@ class PlanetarySystem
     void addBodyToNameIndex(Body* body);
     void removeBodyFromNameIndex(const Body* body);
     void addName(NameInfo::SharedConstPtr);
+    void addLocalizedName(NameInfo::SharedConstPtr);
     void removeName(NameInfo::SharedConstPtr);
 
  private:

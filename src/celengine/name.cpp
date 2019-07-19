@@ -103,6 +103,16 @@ void NameInfo::trThread()
         if (!info)
             return;
         info->translate();
+        if (info->getSystem() == nullptr)
+        {
+            AstroDatabase * db = info->getObject()->getAstroDatabase();
+            if (db != nullptr)
+                db->addLocalizedName(info);
+//             else
+//                 fmt::fprintf(cerr, "Trying add localized name \"%s\" to null database!\n", info->getLocalized().str());
+        }
+        else
+            info->getSystem()->addLocalizedName(info);
 //         fmt::fprintf(cout, "Got NameInfo for translation: \"%s\" -> \"%s\".\n", info->getCanon().str(), info->getLocalized().str());
     }
 }

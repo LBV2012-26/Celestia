@@ -17,12 +17,14 @@ bool NameDatabase::add(NameInfo::SharedConstPtr info, bool overwrite)
         fmt::fprintf(cerr, "Refusing to add canonical name \"%s\"!\n", info->getCanon().str());
         return false;
     }
+    lock_guard<recursive_mutex> lock(m_mutex);
     m_nameIndex[info->getCanon()] = info;
     return true;
 }
 
 bool NameDatabase::addLocalized(NameInfo::SharedConstPtr info, bool overwrite)
 {
+    lock_guard<recursive_mutex> lock(m_mutex);
     if (!info->hasLocalized() || (!overwrite && m_localizedIndex.find(info->getLocalized()) != m_localizedIndex.end()))
         return false;
     m_localizedIndex[info->getLocalized()] = info;
@@ -31,6 +33,7 @@ bool NameDatabase::addLocalized(NameInfo::SharedConstPtr info, bool overwrite)
 
 void NameDatabase::erase(const Name& name)
 {
+    lock_guard<recursive_mutex> lock(m_mutex);
     SharedNameMap::iterator it = m_nameIndex.find(name);
     if (it == m_nameIndex.end())
         return;
@@ -42,6 +45,7 @@ NameInfo::SharedConstPtr NameDatabase::getNameInfo(const Name& name, bool greek,
 {
     const SharedNameMap &map = i18n ? m_localizedIndex : m_nameIndex;
 
+    lock_guard<recursive_mutex> lock(((NameDatabase*)this)->m_mutex);
     SharedNameMap::const_iterator iter = map.find(name);
 
     if (iter != map.end())
@@ -58,6 +62,7 @@ NameInfo::SharedConstPtr NameDatabase::getNameInfo(const Name& name, bool greek,
 
 NameInfo::SharedConstPtr NameDatabase::getNameInfo(const Name& name, bool greek, bool i18n, bool fallback) const
 {
+    lock_guard<recursive_mutex> lock(((NameDatabase*)this)->m_mutex);
     NameInfo::SharedConstPtr info = getNameInfo(name, greek, i18n);
     if (info == nullptr && fallback)
         return getNameInfo(name, greek, !i18n);
@@ -88,6 +93,7 @@ std::vector<Name> NameDatabase::getCompletion(const std::string& name, bool gree
     else fname = name;
     int name_length = UTF8Length(fname);
 
+    lock_guard<recursive_mutex> lock(((NameDatabase*)this)->m_mutex);
     for (SharedNameMap::const_iterator iter = m_nameIndex.begin(); iter != m_nameIndex.end(); ++iter)
     {
         if (!UTF8StringCompare(iter->first.str(), fname, name_length, true))
@@ -197,6 +203,7 @@ AstroObject *NameDatabase::findObjectByName(const Name& name, bool greek) const
 
 void NameDatabase::dump() const
 {
+    lock_guard<recursive_mutex> lock(((NameDatabase*)this)->m_mutex);
     fmt::fprintf(cout, "%i canonical names:\n", m_nameIndex.size());
     for (const auto &pair : m_nameIndex)
         fmt::fprintf(cout, "  %s", pair.first.str());
