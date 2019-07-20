@@ -1119,38 +1119,6 @@ PlanetarySystem::PlanetarySystem(Star* _star) :
 {
 }
 
-
-/*! Add a new alias for an object. If an object with the specified
- *  alias already exists in the planetary system, the old entry will
- *  be replaced.
- */
-/*
-void PlanetarySystem::addAlias(Body* body, const string& alias)
-{
-    assert(body->getSystem() == this);
-
-    objectIndex.insert(make_pair(alias, body));
-}
-*/
-
-/*! Remove the an alias for an object. This method does nothing
- *  if the alias is not present in the index, or if the alias
- *  refers to a different object.
- */
-/*
-void PlanetarySystem::removeAlias(const Body* body, const string& alias)
-{
-    assert(body->getSystem() == this);
-
-    ObjectIndex::iterator iter = objectIndex.find(alias);
-    if (iter != objectIndex.end())
-    {
-        if (iter->second == body)
-            objectIndex.erase(iter);
-    }
-}
-*/
-
 void PlanetarySystem::addName(NameInfo::SharedConstPtr info)
 {
     if (info->getSystem() == this)
@@ -1182,7 +1150,7 @@ void PlanetarySystem::addBody(Body* body)
 }
 
 
-// Add all aliases for the body to the name index
+// Add all names for the body to the name index
 void PlanetarySystem::addBodyToNameIndex(Body* body)
 {
     auto names = body->getNameInfos();
@@ -1312,6 +1280,5 @@ int PlanetarySystem::getOrder(const Body* body) const
 
 Selection Body::toSelection()
 {
-//    std::cout << "Body::toSelection()\n";
     return Selection(this);
 }

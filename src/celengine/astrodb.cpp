@@ -379,6 +379,31 @@ void AstroDatabase::addNames(AstroCatalog::IndexNumber nr, const string &names)
         fmt::fprintf(cerr, "No object nr %u to add names \"%s\"!\n", nr, names);
 }
 
+bool AstroDatabase::addSystem(SolarSystem *sys, AstroCatalog::IndexNumber nr)
+{
+    AstroObject *o = getObject(nr);
+    if (o == nullptr)
+    {
+        fmt::fprintf(cerr, "Trying to add SolarSystem to null object!\n");
+        return false;
+    }
+    m_systems.insert(make_pair(nr, sys));
+    return true;
+}
+
+SolarSystem *AstroDatabase::getSystem(AstroCatalog::IndexNumber nr) const
+{
+    auto it = m_systems.find(nr);
+    if (it == m_systems.end())
+        return nullptr;
+    return it->second;
+}
+
+bool AstroDatabase::removeSystem(AstroCatalog::IndexNumber nr)
+{
+    return m_systems.erase(nr) > 0 ? true : false;
+}
+
 void AstroDatabase::createBuiltinCatalogs()
 {
     m_catalogs.insert(std::make_pair(HenryDrapper, new HenryDrapperCatalog()));
