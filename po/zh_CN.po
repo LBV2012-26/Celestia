@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.7\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
 #: ../data/data.cpp:1
 msgid "Mercury"
 msgstr "水星"
@@ -1395,7 +1396,7 @@ msgstr "无效恒星数据: 缺少星等。\n"
 msgid ""
 "Invalid star: absolute (not apparent) magnitude must be specified for star "
 "near origin\n"
-msgstr "无效恒星数据: 必须输入接近起源的恒星的绝对星等 (非视星等)\n"
+msgstr "无效恒星数据: 必须输入接近原始的恒星的绝对星等 (非视星等)\n"
 
 #: ../src/celengine/stardb.cpp:1397
 #, c-format
@@ -6248,7 +6249,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "作为附加 \"extras\" 文件目录"
 
 #~ msgid "Start fullscreen"
-#~ msgstr "以全屏模式启动"
+#~ msgstr "启动全屏模式"
 
 #~ msgid "Disable splash screen"
 #~ msgstr "关闭启动画面"
