@@ -1231,11 +1231,11 @@ msgstr "正在加载 NV 片段程序: "
 
 #: ../src/celengine/fragmentprog.cpp:97
 msgid "Error loading NV fragment program: "
-msgstr "加载 NV 片段程序时出现错误: "
+msgstr "加载 NV 片段程序时出错: "
 
 #: ../src/celengine/fragmentprog.cpp:114
 msgid "Error in fragment program "
-msgstr "片段程序出现错误 "
+msgstr "片段程序出错 "
 
 #: ../src/celengine/fragmentprog.cpp:125
 msgid "Initializing NV fragment programs . . .\n"
@@ -1341,7 +1341,7 @@ msgstr "跨索引文件文本不正确\n"
 #: ../src/celengine/stardb.cpp:592
 #, fuzzy, c-format
 msgid "Loading cross index failed at record %u\n"
-msgstr "加载跨索引文件失败——出错数据点 %u\n"
+msgstr "加载跨索引文件失败——错误数据点 %u\n"
 
 #: ../src/celengine/stardb.cpp:676
 #, fuzzy, c-format
@@ -1419,11 +1419,11 @@ msgstr "正在加载 NV 顶点程序: "
 
 #: ../src/celengine/vertexprog.cpp:119
 msgid "Error loading NV vertex program: "
-msgstr "加载 NV 顶点程序时出现错误: "
+msgstr "加载 NV 顶点程序时出错: "
 
 #: ../src/celengine/vertexprog.cpp:136 ../src/celengine/vertexprog.cpp:195
 msgid "Error in vertex program "
-msgstr "NV 顶点程序出现错误 "
+msgstr "NV 顶点程序出错 "
 
 #: ../src/celengine/vertexprog.cpp:163
 msgid "Loading ARB vertex program: "
@@ -1431,7 +1431,7 @@ msgstr "正在加载 ARB 顶点程序: "
 
 #: ../src/celengine/vertexprog.cpp:168
 msgid "Error loading ARB vertex program: "
-msgstr "加载 ARB 顶点程序时出现错误: "
+msgstr "加载 ARB 顶点程序时出错: "
 
 #: ../src/celengine/vertexprog.cpp:196
 msgid ", line "
@@ -1492,16 +1492,16 @@ msgstr "%s\n"
 
 #: ../src/celestia/celestiacore.cpp:469
 msgid "Error opening script file."
-msgstr "打开脚本文件时出现错误。"
+msgstr "打开脚本文件时出错。"
 
 #: ../src/celestia/celestiacore.cpp:497
 #, c-format
 msgid "Error opening script '%s'"
-msgstr "打开脚本文件 '%s' 时出现错误"
+msgstr "打开脚本文件 '%s' 时出错"
 
 #: ../src/celestia/celestiacore.cpp:512
 msgid "Unknown error opening script"
-msgstr "打开脚本文件出现未知错误"
+msgstr "打开脚本文件时出现未知错误"
 
 #: ../src/celestia/celestiacore.cpp:521 ../src/celestia/celestiacore.cpp:4988
 msgid "Script coroutine initialization failed"
@@ -1923,7 +1923,7 @@ msgstr "质量: %.2f 倍地球质量\n"
 #: ../src/celestia/celestiacore.cpp:3186
 #, c-format
 msgid "Density: %.2f x 1000 kg/m^3\n"
-msgstr "密度: %.2d × 10^3 km/m^3\n"
+msgstr "密度: %.2d × 10^3 kg/m^3\n"
 
 #: ../src/celestia/celestiacore.cpp:3192
 #, fuzzy, c-format
@@ -2041,12 +2041,12 @@ msgstr "编辑模式"
 #: ../src/celestia/celestiacore.cpp:3954
 #, fuzzy, c-format
 msgid "Loading solar system catalog: %s\n"
-msgstr "加载太阳系目录: %s\n"
+msgstr "正在加载太阳系目录: %s\n"
 
 #: ../src/celestia/celestiacore.cpp:3995
 #, fuzzy, c-format
 msgid "Loading %s catalog: %s\n"
-msgstr "加载 %s 目录: %s\n"
+msgstr "正在加载 %s 目录: %s\n"
 
 #: ../src/celestia/celestiacore.cpp:4037
 msgid "Error reading configuration file."
@@ -2054,7 +2054,7 @@ msgstr "读取系统设置文件时出错。"
 
 #: ../src/celestia/celestiacore.cpp:4048
 msgid "Initialization of SPICE library failed."
-msgstr "SPICE 库初始化失败。"
+msgstr "Spice 库初始化失败。"
 
 #: ../src/celestia/celestiacore.cpp:4094
 msgid "Cannot read star database."
@@ -2063,7 +2063,7 @@ msgstr "无法读取星体数据库。"
 #: ../src/celestia/celestiacore.cpp:4115
 #, fuzzy, c-format
 msgid "Error opening deepsky catalog file %s.\n"
-msgstr "读取深空天体目录文件 %s 出错。\n"
+msgstr "读取深空天体目录文件 %s 时出错。\n"
 
 #: ../src/celestia/celestiacore.cpp:4119
 #, fuzzy, c-format
@@ -2129,7 +2129,7 @@ msgstr "打开 LuaHook '%s' 时出错"
 #: ../src/celestia/celestiacore.cpp:4976
 #, fuzzy
 msgid "Unknown error loading hook script"
-msgstr "打开脚本文件出现未知错误"
+msgstr "打开脚本文件时出现未知错误"
 
 #: ../src/celestia/celx.cpp:1066
 msgid ""
@@ -2166,7 +2166,7 @@ msgstr "警告:\n"
 msgid ""
 "Celestia was unable to initialize OpenGL extensions (error %i). Graphics "
 "quality will be reduced."
-msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将会降低。"
+msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将降低。"
 
 #. if (glGetError())
 #. result = [NSString stringWithFormat:NSLocalizedString(@"%@: --not available--",""), desc];
@@ -5755,7 +5755,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "高度: "
 
 #~ msgid "Celestia encountered an error while processing your script"
-#~ msgstr "Celestia 在处理脚本时出现错误"
+#~ msgstr "Celestia 在处理脚本时出错"
 
 #~ msgid "Celestia Preferences"
 #~ msgstr "Celestia 偏好设置"
