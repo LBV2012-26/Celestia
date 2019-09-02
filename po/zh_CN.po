@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/data.cpp:1
@@ -1310,7 +1310,7 @@ msgstr "疏散星团"
 #: ../src/celengine/solarsys.cpp:79
 #, fuzzy, c-format
 msgid "Error in .ssc file (line %d): "
-msgstr ".ssc 文件出错 (行 %d) "
+msgstr ".ssc 文件出错 (行 %d): "
 
 #: ../src/celengine/solarsys.cpp:1218 ../src/celengine/solarsys.cpp:1286
 #, c-format
@@ -1341,7 +1341,7 @@ msgstr "跨索引文件文本不正确\n"
 #: ../src/celengine/stardb.cpp:592
 #, fuzzy, c-format
 msgid "Loading cross index failed at record %u\n"
-msgstr "加载跨索引文件失败——错误数据点 %u\n"
+msgstr "加载跨索引文件失败——数据点 %u 错误\n"
 
 #: ../src/celengine/stardb.cpp:676
 #, fuzzy, c-format
@@ -1411,7 +1411,7 @@ msgstr "正在创建平铺纹理。宽度=%i，MAX=%i\n"
 #: ../src/celengine/texture.cpp:934
 #, fuzzy, c-format
 msgid "Creating ordinary texture: %ix%i\n"
-msgstr "正在创建一般纹理: %i×%i\n"
+msgstr "正在创建一般纹理: %i × %i\n"
 
 #: ../src/celengine/vertexprog.cpp:114
 msgid "Loading NV vertex program: "
@@ -1456,7 +1456,7 @@ msgstr "所有 ARB 顶点程序加载成功。\n"
 #: ../src/celephem/samporbit.cpp:832
 #, fuzzy, c-format
 msgid "Error openning %s.\n"
-msgstr "错误读取 %s。\n"
+msgstr "打开 %s 时出错。\n"
 
 #: ../src/celephem/samporbit.cpp:839 ../src/tools/xyzv2bin/bin2xyzv.cpp:25
 #, fuzzy, c-format
@@ -1621,17 +1621,17 @@ msgstr "恒星颜色: 增强色"
 #: ../src/celestia/celestiacore.cpp:1594
 #, fuzzy, c-format
 msgid "Light travel time:  %.4f yr"
-msgstr "光传播时间: %.4f 年"
+msgstr "光传播时间: %.4f yr"
 
 #: ../src/celestia/celestiacore.cpp:1603
 #, c-format
 msgid "Light travel time:  %d min  %.1f s"
-msgstr "光传播时间: %d 分 %.1f 秒"
+msgstr "光传播时间: %d min %.1f s"
 
 #: ../src/celestia/celestiacore.cpp:1608
 #, c-format
 msgid "Light travel time:  %d h  %d min  %.1f s"
-msgstr "光传播时间: %d 时 %d 分 %.1f 秒"
+msgstr "光传播时间: %d h %d min %.1f s"
 
 #: ../src/celestia/celestiacore.cpp:1626
 msgid "Light travel delay included"
@@ -1781,22 +1781,22 @@ msgstr ""
 #: ../src/celestia/qt/qtinfopanel.cpp:224
 #, fuzzy
 msgid "days"
-msgstr "天"
+msgstr "d"
 
 #: ../src/celestia/celestiacore.cpp:2806 ../src/celestia/qt/qtinfopanel.cpp:162
 #, fuzzy
 msgid "hours"
-msgstr "时"
+msgstr "h"
 
 #: ../src/celestia/celestiacore.cpp:2808
 #, fuzzy
 msgid "minutes"
-msgstr "分"
+msgstr "min"
 
 #: ../src/celestia/celestiacore.cpp:2810
 #, fuzzy
 msgid "seconds"
-msgstr "秒"
+msgstr "s"
 
 #: ../src/celestia/celestiacore.cpp:2812
 #, fuzzy, c-format
@@ -2005,7 +2005,7 @@ msgstr "追逐 %s\n"
 #: ../src/celestia/celestiacore.cpp:3560
 #, c-format
 msgid "FOV: %s (%.2fx)\n"
-msgstr "FOV: %s (%.2f×)\n"
+msgstr "FOV: %s (%.2f × )\n"
 
 #: ../src/celestia/celestiacore.cpp:3588 ../src/celestia/celestiacore.cpp:3591
 msgid "Sun"
@@ -2018,7 +2018,7 @@ msgstr "目标名称: "
 #: ../src/celestia/celestiacore.cpp:3849
 #, c-format
 msgid "%dx%d at %f fps  %s"
-msgstr "%d×%d 于 %f FPS  %s"
+msgstr "%d × %d 于 %f FPS  %s"
 
 #: ../src/celestia/celestiacore.cpp:3852
 #, fuzzy
@@ -2384,8 +2384,8 @@ msgid ""
 "OggTheoraCapture::start() - Theora video: %s %.2f(%d/%d) fps quality %d %dx"
 "%d offset (%dx%d)\n"
 msgstr ""
-"OggTheoraCapture::start() - Theora 影像: %s %.2f(%d/%d) FPS 质量 %d %d×%d 位"
-"移 (%d×%d)\n"
+"OggTheoraCapture::start() - Theora 影像: %s %.2f (%d/%d) FPS 质量 %d %d × %d 位"
+"移 (%d × %d)\n"
 
 #: ../src/celestia/oggtheoracapture.cpp:426
 #, c-format
@@ -2417,7 +2417,7 @@ msgstr "可能由于安装不当，Celestia 找不到 CelestiaResources 文件�
 msgid ""
 "Celestia was unable to initialize OpenGL extensions (error %1). Graphics "
 "quality will be reduced."
-msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将会降低。"
+msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将降低。"
 
 #: ../src/celestia/qt/qtappwin.cpp:309
 msgid "Celestial Browser"
@@ -2528,7 +2528,7 @@ msgstr "分辨率:"
 #: ../src/celestia/qt/qtappwin.cpp:744
 #, qt-format
 msgid "%1 x %2"
-msgstr "%1×%2"
+msgstr "%1 × %2"
 
 #: ../src/celestia/qt/qtappwin.cpp:748
 #: ../src/celestia/win32/res/resource_strings.cpp:143
@@ -3762,7 +3762,7 @@ msgstr ""
 
 #: ../src/celestia/qt/qtpreferencesdialog.cpp:168
 msgid "OpenGL 2.0"
-msgstr "OpenGL 2.0"
+msgstr ""
 
 #: ../src/celestia/qt/qtpreferencesdialog.cpp:208
 msgid "Blackbody D65"
@@ -3798,7 +3798,7 @@ msgstr "绝对/视星等: "
 
 #: ../src/celestia/qt/qtselectionpopup.cpp:125
 msgid "Class: "
-msgstr "类别:"
+msgstr "类别: "
 
 #: ../src/celestia/qt/qtselectionpopup.cpp:136
 msgid "&Select"
@@ -5477,7 +5477,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "减慢时间流逝"
 
 #~ msgid "Accelerate Time (x2)"
-#~ msgstr "加快时间流逝 (×2)"
+#~ msgstr "加快时间流逝 ( × 2)"
 
 #~ msgid "Decelerate Time (/2)"
 #~ msgstr "减慢时间流逝 (÷2)"
@@ -5951,13 +5951,13 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr " 已暂停"
 
 #~ msgid "Current size: %1 x %2"
-#~ msgstr "当前大小:%1×%2"
+#~ msgstr "当前大小:%1 × %2"
 
 #~ msgid "Current width: %1 x %2"
-#~ msgstr "当前宽度:%1×%2"
+#~ msgstr "当前宽度:%1 × %2"
 
 #~ msgid "Current height: %1 x %2"
-#~ msgstr "当前高度:%1×%2"
+#~ msgstr "当前高度:%1 × %2"
 
 #~ msgid "You must specify a file name."
 #~ msgstr "您必须指定文件名。"
@@ -6019,7 +6019,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "质心 "
 
 #~ msgid ", max="
-#~ msgstr ",MAX="
+#~ msgstr "，MAX="
 
 #~ msgid "Orientation: "
 #~ msgstr "方向: "
@@ -6049,10 +6049,10 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "渲染通道: NVIDIA GeForce FX"
 
 #~ msgid " days"
-#~ msgstr " 天"
+#~ msgstr " d"
 
 #~ msgid " hours"
-#~ msgstr " 时"
+#~ msgstr " h"
 
 #~ msgid "RA: "
 #~ msgstr "赤经: "
