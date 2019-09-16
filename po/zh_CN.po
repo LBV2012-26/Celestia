@@ -2421,7 +2421,7 @@ msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将降�
 
 #: ../src/celestia/qt/qtappwin.cpp:309
 msgid "Celestial Browser"
-msgstr "对象浏览器"
+msgstr "天体浏览器"
 
 #. Info browser for a selected object
 #: ../src/celestia/qt/qtappwin.cpp:315
@@ -4639,11 +4639,11 @@ msgstr "置中所选对象(&C)\tC"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:14
 msgid "&Go to Selection\tG"
-msgstr "前往选择对象(&G)\tG"
+msgstr "前往所选对象(&G)\tG"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:15
 msgid "&Follow Selection\tF"
-msgstr "跟随选择对象(&F)\tF"
+msgstr "跟随所选对象(&F)\tF"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:16
 msgid "S&ync Orbit Selection\tY"
@@ -4651,7 +4651,7 @@ msgstr "同步轨道于所选对象(&Y)\tY"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:17
 msgid "&Track Selection\tT"
-msgstr "追踪选择对象(&T)\tT"
+msgstr "追踪所选对象(&T)\tT"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:18
 msgid "Solar System &Browser..."
@@ -4980,7 +4980,7 @@ msgstr "新建文件夹..."
 
 #: ../src/celestia/win32/res/resource_strings.cpp:112
 msgid "Solar System Browser"
-msgstr "太阳系浏览器"
+msgstr "类太阳系浏览器"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:116
 #: ../src/celestia/win32/res/resource_strings.cpp:123
@@ -4989,7 +4989,7 @@ msgstr "前往(&G)"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:117
 msgid "Solar System Objects"
-msgstr "太阳系物体"
+msgstr "类太阳系对象"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:118
 msgid "Star Browser"
@@ -5354,7 +5354,7 @@ msgstr "卫星(&S)"
 
 #: ../src/celestia/win32/winmain.cpp:1681
 msgid "Orbiting Bodies"
-msgstr "绕行的对象"
+msgstr "环绕的对象"
 
 #: ../src/celestia/win32/winmain.cpp:3194
 msgid "Loading: "
@@ -5392,13 +5392,13 @@ msgstr "与 UTC 的差异"
 #: ../src/tools/xyzv2bin/bin2xyzv.cpp:18
 #, fuzzy, c-format
 msgid "Error openning %s or .\n"
-msgstr "错误打开 %s 或 。\n"
+msgstr "打开 %s 时或 时出错。\n"
 
 #~ msgid "Invisible"
 #~ msgstr "不可见"
 
 #~ msgid "Small Body"
-#~ msgstr "小对象"
+#~ msgstr "小天体"
 
 #~ msgid "Dwarf Planet"
 #~ msgstr "矮行星"
@@ -5939,7 +5939,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "参考矢量(&R)"
 
 #~ msgid "Small Bodies"
-#~ msgstr "小对象"
+#~ msgstr "小天体"
 
 #~ msgid "Duration: %1"
 #~ msgstr "持续时间: %1"
