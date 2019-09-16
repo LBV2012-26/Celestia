@@ -1324,7 +1324,7 @@ msgstr "警告: 重复定义 %s %s\n"
 
 #: ../src/celengine/solarsys.cpp:1265
 msgid "bad alternate surface"
-msgstr "可替换天体表面不正确"
+msgstr "可替换表面不正确"
 
 #: ../src/celengine/solarsys.cpp:1280
 msgid "bad location"
@@ -2421,7 +2421,7 @@ msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将降�
 
 #: ../src/celestia/qt/qtappwin.cpp:309
 msgid "Celestial Browser"
-msgstr "天体浏览器"
+msgstr "对象浏览器"
 
 #. Info browser for a selected object
 #: ../src/celestia/qt/qtappwin.cpp:315
@@ -2691,17 +2691,17 @@ msgstr "选择太阳"
 #: ../src/celestia/qt/qtappwin.cpp:1225
 #, fuzzy
 msgid "Center Selection"
-msgstr "置中所选天体"
+msgstr "置中所选对象"
 
 #: ../src/celestia/qt/qtappwin.cpp:1229
 #, fuzzy
 msgid "Goto Selection"
-msgstr "前往所选天体"
+msgstr "前往所选对象"
 
 #: ../src/celestia/qt/qtappwin.cpp:1233
 #: ../src/celestia/win32/res/resource_strings.cpp:12
 msgid "Goto Object..."
-msgstr "驶向天体..."
+msgstr "驶向对象..."
 
 #. ***** Time menu *****
 #: ../src/celestia/qt/qtappwin.cpp:1238
@@ -3552,7 +3552,7 @@ msgstr "取消标记在列表中选中的深空天体"
 #: ../src/celestia/qt/qteventfinder.cpp:473
 #, fuzzy
 msgid "Eclipsed body"
-msgstr "上级天体"
+msgstr "上级对象"
 
 #: ../src/celestia/qt/qteventfinder.cpp:475
 msgid "Occulter"
@@ -4097,7 +4097,7 @@ msgstr "按类别对对象分组"
 
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:712
 msgid "Mark bodies selected in list view"
-msgstr "标记在列表中选定的天体"
+msgstr "标记在列表中选定的对象"
 
 #: ../src/celestia/qt/qttimetoolbar.cpp:30
 #: ../src/celestia/qt/qttimetoolbar.cpp:45
@@ -4631,27 +4631,27 @@ msgstr "游览向导(&G)..."
 
 #: ../src/celestia/win32/res/resource_strings.cpp:11
 msgid "Select &Object..."
-msgstr "选择天体(&O)..."
+msgstr "选择对象(&O)..."
 
 #: ../src/celestia/win32/res/resource_strings.cpp:13
 msgid "&Center Selection\tC"
-msgstr "置中所选天体(&C)\tC"
+msgstr "置中所选对象(&C)\tC"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:14
 msgid "&Go to Selection\tG"
-msgstr "前往选择天体(&G)\tG"
+msgstr "前往选择对象(&G)\tG"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:15
 msgid "&Follow Selection\tF"
-msgstr "跟随选择天体(&F)\tF"
+msgstr "跟随选择对象(&F)\tF"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:16
 msgid "S&ync Orbit Selection\tY"
-msgstr "同步轨道于所选天体(&Y)\tY"
+msgstr "同步轨道于所选对象(&Y)\tY"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:17
 msgid "&Track Selection\tT"
-msgstr "追踪选择天体(&T)\tT"
+msgstr "追踪选择对象(&T)\tT"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:18
 msgid "Solar System &Browser..."
@@ -4935,11 +4935,11 @@ msgstr "Andrew Tribick"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:89
 msgid "Select Object"
-msgstr "选择天体"
+msgstr "选择对象"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:92
 msgid "Object Name"
-msgstr "天体名称"
+msgstr "对象名称"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:93
 msgid "License"
@@ -5035,11 +5035,11 @@ msgstr "选择目标:"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:132
 msgid "Go to Object"
-msgstr "前往天体"
+msgstr "前往对象"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:138
 msgid "Object"
-msgstr "天体"
+msgstr "对象"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:139
 msgid "Long."
@@ -5354,7 +5354,7 @@ msgstr "卫星(&S)"
 
 #: ../src/celestia/win32/winmain.cpp:1681
 msgid "Orbiting Bodies"
-msgstr "绕行的天体"
+msgstr "绕行的对象"
 
 #: ../src/celestia/win32/winmain.cpp:3194
 msgid "Loading: "
@@ -5398,7 +5398,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "不可见"
 
 #~ msgid "Small Body"
-#~ msgstr "小天体"
+#~ msgstr "小对象"
 
 #~ msgid "Dwarf Planet"
 #~ msgstr "矮行星"
@@ -5731,7 +5731,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "转到 URL"
 
 #~ msgid "Object: "
-#~ msgstr "天体: "
+#~ msgstr "对象: "
 
 #~ msgid "Longitude: "
 #~ msgstr "经度 :"
@@ -5939,7 +5939,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "参考矢量(&R)"
 
 #~ msgid "Small Bodies"
-#~ msgstr "小天体"
+#~ msgstr "小对象"
 
 #~ msgid "Duration: %1"
 #~ msgstr "持续时间: %1"
@@ -6010,7 +6010,7 @@ msgstr "错误打开 %s 或 。\n"
 #~ msgstr "' 找不到。"
 
 #~ msgid "parent body '"
-#~ msgstr "上级天体 '"
+#~ msgstr "上级对象 '"
 
 #~ msgid "' not found.\n"
 #~ msgstr "' 找不到。\n"
