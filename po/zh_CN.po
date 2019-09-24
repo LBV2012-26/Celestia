@@ -5477,10 +5477,10 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "减慢时间流逝"
 
 #~ msgid "Accelerate Time (x2)"
-#~ msgstr "加快时间流逝 ( × 2)"
+#~ msgstr "加快时间流逝 (× 2)"
 
 #~ msgid "Decelerate Time (/2)"
-#~ msgstr "减慢时间流逝 (÷2)"
+#~ msgstr "减慢时间流逝 (÷ 2)"
 
 #~ msgid "Pause Time"
 #~ msgstr "暂停时间流逝"
@@ -6019,7 +6019,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "质心 "
 
 #~ msgid ", max="
-#~ msgstr "，MAX="
+#~ msgstr "，Max="
 
 #~ msgid "Orientation: "
 #~ msgstr "方向: "
@@ -6234,7 +6234,7 @@ msgstr "打开 %s 时或 时出错。\n"
 
 #, fuzzy
 #~ msgid "Star color: normal"
-#~ msgstr "恒星颜色: 一般"
+#~ msgstr "恒星颜色: 正常"
 
 #~ msgid "Apparent mag: %.2f\n"
 #~ msgstr "视星等: %.2f\n"
