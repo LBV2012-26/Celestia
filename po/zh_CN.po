@@ -1315,7 +1315,7 @@ msgstr ".ssc 文件出错 (行 %d): "
 #: ../src/celengine/solarsys.cpp:1218 ../src/celengine/solarsys.cpp:1286
 #, c-format
 msgid "parent body '%s' of '%s' not found.\n"
-msgstr "找不到 '%s' 的上级对象 '%s'。\n"
+msgstr "找不到 '%s' 的上级天体 '%s'。\n"
 
 #: ../src/celengine/solarsys.cpp:1229
 #, fuzzy, c-format
@@ -1406,7 +1406,7 @@ msgstr "等级: %i，%.5f ly，%i 节点，%i 恒星\n"
 #: ../src/celengine/texture.cpp:929
 #, fuzzy, c-format
 msgid "Creating tiled texture. Width=%i, max=%i\n"
-msgstr "正在创建平铺纹理。宽度=%i，MAX=%i\n"
+msgstr "正在创建平铺纹理。宽度=%i，Max=%i\n"
 
 #: ../src/celengine/texture.cpp:934
 #, fuzzy, c-format
@@ -2315,20 +2315,20 @@ msgstr "无标题文件夹"
 #: ../src/celestia/macosx/GotoWindowController.m:59
 #, fuzzy
 msgid "No Object Name Entered"
-msgstr "未输入对象名称"
+msgstr "未输入天体名称"
 
 #: ../src/celestia/macosx/GotoWindowController.m:60
 msgid "Please enter an object name."
-msgstr "请输入对象名称"
+msgstr "请输入天体名称"
 
 #: ../src/celestia/macosx/GotoWindowController.m:67
 #, fuzzy
 msgid "Object Not Found"
-msgstr "找不到对象"
+msgstr "找不到天体"
 
 #: ../src/celestia/macosx/GotoWindowController.m:68
 msgid "Please check that the object name is correct."
-msgstr "请检查对象名称是否正确"
+msgstr "请检查天体名称是否正确"
 
 #: ../src/celestia/macosx/Menu_Extensions.m:173
 #, fuzzy
@@ -2691,17 +2691,17 @@ msgstr "选择太阳"
 #: ../src/celestia/qt/qtappwin.cpp:1225
 #, fuzzy
 msgid "Center Selection"
-msgstr "置中所选对象"
+msgstr "置中所选天体"
 
 #: ../src/celestia/qt/qtappwin.cpp:1229
 #, fuzzy
 msgid "Goto Selection"
-msgstr "前往所选对象"
+msgstr "前往所选天体"
 
 #: ../src/celestia/qt/qtappwin.cpp:1233
 #: ../src/celestia/win32/res/resource_strings.cpp:12
 msgid "Goto Object..."
-msgstr "驶向对象..."
+msgstr "驶向天体..."
 
 #. ***** Time menu *****
 #: ../src/celestia/qt/qtappwin.cpp:1238
@@ -3397,7 +3397,7 @@ msgstr "刷新"
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:710
 #, fuzzy
 msgid "Mark Selected"
-msgstr "标记已选中的对象"
+msgstr "标记已选中的天体"
 
 #: ../src/celestia/qt/qtcelestialbrowser.cpp:561
 #, fuzzy
@@ -3409,7 +3409,7 @@ msgstr "标记在列表中选定的恒星"
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:715
 #, fuzzy
 msgid "Unmark Selected"
-msgstr "取消标记已选中的对象"
+msgstr "取消标记已选中的天体"
 
 #: ../src/celestia/qt/qtcelestialbrowser.cpp:565
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:716
@@ -3538,7 +3538,7 @@ msgstr "标签"
 #: ../src/celestia/qt/qtdeepskybrowser.cpp:577
 #, fuzzy, qt-format
 msgid "%1 objects found"
-msgstr "找到对象 %1"
+msgstr "找到天体 %1"
 
 #: ../src/celestia/qt/qtdeepskybrowser.cpp:477
 msgid "Mark DSOs selected in list view"
@@ -3552,7 +3552,7 @@ msgstr "取消标记在列表中选中的深空天体"
 #: ../src/celestia/qt/qteventfinder.cpp:473
 #, fuzzy
 msgid "Eclipsed body"
-msgstr "上级对象"
+msgstr "上级天体"
 
 #: ../src/celestia/qt/qteventfinder.cpp:475
 msgid "Occulter"
@@ -3597,7 +3597,7 @@ msgstr "查找日食"
 #: ../src/celestia/qt/qteventfinder.cpp:663
 #, fuzzy, qt-format
 msgid "%1 is not a valid object"
-msgstr "%1 不是有效的对象"
+msgstr "%1 不是有效的天体"
 
 #: ../src/celestia/qt/qteventfinder.cpp:674
 msgid "End date is earlier than start date."
@@ -3631,7 +3631,7 @@ msgstr "在 %1 后"
 
 #: ../src/celestia/qt/qtinfopanel.cpp:75
 msgid "Error: no object selected!\n"
-msgstr "错误: 未选择对象！\n"
+msgstr "错误: 未选择天体！\n"
 
 #: ../src/celestia/qt/qtinfopanel.cpp:86
 #: ../src/celestia/qt/qtselectionpopup.cpp:159
@@ -3919,7 +3919,7 @@ msgstr "航天器"
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:561
 #, fuzzy
 msgid "Other objects"
-msgstr "其他对象"
+msgstr "其他天体"
 
 #: ../src/celestia/qt/qtsettimedialog.cpp:48
 #, fuzzy
@@ -4093,11 +4093,11 @@ msgstr "表面特征"
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:701
 #, fuzzy
 msgid "Group objects by class"
-msgstr "按类别对对象分组"
+msgstr "按类别对天体分组"
 
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:712
 msgid "Mark bodies selected in list view"
-msgstr "标记在列表中选定的对象"
+msgstr "标记在列表中选定的天体"
 
 #: ../src/celestia/qt/qttimetoolbar.cpp:30
 #: ../src/celestia/qt/qttimetoolbar.cpp:45
@@ -4181,7 +4181,7 @@ msgstr "对话"
 #: ../src/celestia/qt/rc.cpp:18
 #, fuzzy
 msgid "Object name:"
-msgstr "对象名称:"
+msgstr "天体名称:"
 
 #. i18n: file: ../src/celestia/qt/gotoobjectdialog.ui:75
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -4258,7 +4258,7 @@ msgstr "偏好"
 #. i18n: ectx: property (title), widget (QGroupBox, objectsGroupBox)
 #: ../src/celestia/qt/rc.cpp:66 ../src/celestia/qt/rc.cpp:69
 msgid "Objects"
-msgstr "对象"
+msgstr "天体"
 
 #. i18n: file: ../src/celestia/qt/preferences.ui:56
 #. i18n: ectx: property (text), widget (QCheckBox, dwarfPlanetsCheck)
@@ -4631,27 +4631,27 @@ msgstr "游览向导(&G)..."
 
 #: ../src/celestia/win32/res/resource_strings.cpp:11
 msgid "Select &Object..."
-msgstr "选择对象(&O)..."
+msgstr "选择天体(&O)..."
 
 #: ../src/celestia/win32/res/resource_strings.cpp:13
 msgid "&Center Selection\tC"
-msgstr "置中所选对象(&C)\tC"
+msgstr "置中所选天体(&C)\tC"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:14
 msgid "&Go to Selection\tG"
-msgstr "前往所选对象(&G)\tG"
+msgstr "前往所选天体(&G)\tG"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:15
 msgid "&Follow Selection\tF"
-msgstr "跟随所选对象(&F)\tF"
+msgstr "跟随所选天体(&F)\tF"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:16
 msgid "S&ync Orbit Selection\tY"
-msgstr "同步轨道于所选对象(&Y)\tY"
+msgstr "同步轨道于所选天体(&Y)\tY"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:17
 msgid "&Track Selection\tT"
-msgstr "追踪所选对象(&T)\tT"
+msgstr "追踪所选天体(&T)\tT"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:18
 msgid "Solar System &Browser..."
@@ -4935,11 +4935,11 @@ msgstr "Andrew Tribick"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:89
 msgid "Select Object"
-msgstr "选择对象"
+msgstr "选择天体"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:92
 msgid "Object Name"
-msgstr "对象名称"
+msgstr "天体名称"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:93
 msgid "License"
@@ -4989,7 +4989,7 @@ msgstr "前往(&G)"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:117
 msgid "Solar System Objects"
-msgstr "类太阳系对象"
+msgstr "类太阳系天体"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:118
 msgid "Star Browser"
@@ -5035,11 +5035,11 @@ msgstr "选择目标:"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:132
 msgid "Go to Object"
-msgstr "前往对象"
+msgstr "前往天体"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:138
 msgid "Object"
-msgstr "对象"
+msgstr "天体"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:139
 msgid "Long."
@@ -5354,7 +5354,7 @@ msgstr "卫星(&S)"
 
 #: ../src/celestia/win32/winmain.cpp:1681
 msgid "Orbiting Bodies"
-msgstr "环绕的对象"
+msgstr "环绕的天体"
 
 #: ../src/celestia/win32/winmain.cpp:3194
 msgid "Loading: "
@@ -5731,7 +5731,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "转到 URL"
 
 #~ msgid "Object: "
-#~ msgstr "对象: "
+#~ msgstr "天体: "
 
 #~ msgid "Longitude: "
 #~ msgstr "经度 :"
@@ -5929,7 +5929,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "倍太阳半径"
 
 #~ msgid "Marked objects"
-#~ msgstr "已标记对象"
+#~ msgstr "已标记天体"
 
 #~ msgid "Unmark &All"
 #~ msgstr "取消所有标记(&A)"
@@ -6010,7 +6010,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "' 找不到。"
 
 #~ msgid "parent body '"
-#~ msgstr "上级对象 '"
+#~ msgstr "上级天体 '"
 
 #~ msgid "' not found.\n"
 #~ msgstr "' 找不到。\n"
