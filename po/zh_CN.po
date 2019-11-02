@@ -1411,7 +1411,7 @@ msgstr "正在创建平铺纹理。宽度=%i，Max=%i\n"
 #: ../src/celengine/texture.cpp:934
 #, fuzzy, c-format
 msgid "Creating ordinary texture: %ix%i\n"
-msgstr "正在创建一般纹理: %i × %i\n"
+msgstr "正在创建一般纹理: %i×%i\n"
 
 #: ../src/celengine/vertexprog.cpp:114
 msgid "Loading NV vertex program: "
@@ -1923,7 +1923,7 @@ msgstr "质量: %.2f 倍地球质量\n"
 #: ../src/celestia/celestiacore.cpp:3186
 #, c-format
 msgid "Density: %.2f x 1000 kg/m^3\n"
-msgstr "密度: %.2d × 10^3 kg/m^3\n"
+msgstr "密度: %.2d×10^3 kg/m^3\n"
 
 #: ../src/celestia/celestiacore.cpp:3192
 #, fuzzy, c-format
@@ -2005,7 +2005,7 @@ msgstr "追逐 %s\n"
 #: ../src/celestia/celestiacore.cpp:3560
 #, c-format
 msgid "FOV: %s (%.2fx)\n"
-msgstr "FOV: %s (%.2f × )\n"
+msgstr "FOV: %s (%.2f×)\n"
 
 #: ../src/celestia/celestiacore.cpp:3588 ../src/celestia/celestiacore.cpp:3591
 msgid "Sun"
@@ -2018,7 +2018,7 @@ msgstr "目标名称: "
 #: ../src/celestia/celestiacore.cpp:3849
 #, c-format
 msgid "%dx%d at %f fps  %s"
-msgstr "%d × %d 于 %f FPS  %s"
+msgstr "%d×%d 于 %f FPS  %s"
 
 #: ../src/celestia/celestiacore.cpp:3852
 #, fuzzy
@@ -2294,18 +2294,18 @@ msgstr "读取字体时出错，文字将无法显示。\n"
 
 #: ../src/celestia/macosx/CelestiaController.m:797
 msgid "Movie capture is not available in this version of Celestia."
-msgstr "此版本的 Celestia 不提供录屏功能。"
+msgstr "此版本的 Celestia 不提供屏幕录制功能。"
 
 #. Remove following line to enable movie capture...
 #: ../src/celestia/macosx/CelestiaController.m:797
 #, fuzzy
 msgid "No Movie Capture"
-msgstr "无录屏功能"
+msgstr "无屏幕录制功能"
 
 #: ../src/celestia/macosx/CelestiaController.m:803
 #, fuzzy
 msgid "Capture Movie"
-msgstr "录屏"
+msgstr "屏幕录制"
 
 #. NSLog(@"[FavoritesDrawerController addNewFavorite:%@]",sender);
 #: ../src/celestia/macosx/FavoritesDrawerController.m:117
@@ -2369,7 +2369,7 @@ msgstr "请按照相应的格式输入日期和时间。\n"
 #: ../src/celestia/oggtheoracapture.cpp:162
 #, c-format
 msgid "Error in creating ogg file %s for capture.\n"
-msgstr "创建录屏使用的 OGG 文件 %s 发生错误。\n"
+msgstr "创建屏幕录制使用的 OGG 文件 %s 发生错误。\n"
 
 #. can't get here
 #: ../src/celestia/oggtheoracapture.cpp:256
@@ -2384,8 +2384,8 @@ msgid ""
 "OggTheoraCapture::start() - Theora video: %s %.2f(%d/%d) fps quality %d %dx"
 "%d offset (%dx%d)\n"
 msgstr ""
-"OggTheoraCapture::start() - Theora 影像: %s %.2f (%d/%d) FPS 质量 %d %d × %d 位"
-"移 (%d × %d)\n"
+"OggTheoraCapture::start() - Theora 影像: %s %.2f (%d/%d) FPS 质量 %d %d×%d 位"
+"移 (%d×%d)\n"
 
 #: ../src/celestia/oggtheoracapture.cpp:426
 #, c-format
@@ -2484,7 +2484,7 @@ msgstr "全屏"
 #: ../src/celestia/qt/qtappwin.cpp:421
 #, fuzzy
 msgid "Shift+F11"
-msgstr "录屏(&M)...\tShift+F10"
+msgstr "屏幕录制(&M)...\tShift+F10"
 
 #: ../src/celestia/qt/qtappwin.cpp:612
 #, fuzzy
@@ -2508,7 +2508,7 @@ msgstr "图像 (*.png *.jpg)"
 
 #: ../src/celestia/qt/qtappwin.cpp:723 ../src/celestia/qt/qtappwin.cpp:728
 msgid "Capture Video"
-msgstr "录屏"
+msgstr "屏幕录制"
 
 #: ../src/celestia/qt/qtappwin.cpp:725
 #, fuzzy
@@ -2528,7 +2528,7 @@ msgstr "分辨率:"
 #: ../src/celestia/qt/qtappwin.cpp:744
 #, qt-format
 msgid "%1 x %2"
-msgstr "%1 × %2"
+msgstr "%1×%2"
 
 #: ../src/celestia/qt/qtappwin.cpp:748
 #: ../src/celestia/win32/res/resource_strings.cpp:143
@@ -2630,7 +2630,7 @@ msgstr ""
 #: ../src/celestia/qt/qtappwin.cpp:1172
 #, fuzzy
 msgid "Capture &video"
-msgstr "录屏(&V)"
+msgstr "屏幕录制(&V)"
 
 #: ../src/celestia/qt/qtappwin.cpp:1177
 #, fuzzy
@@ -4615,11 +4615,11 @@ msgstr "占位符"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:5
 msgid "Capture &Image...\tF10"
-msgstr "截屏(&I)...\tF10"
+msgstr "屏幕快照(&I)...\tF10"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:6
 msgid "Capture &Movie...\tShift+F10"
-msgstr "录屏(&M)...\tShift+F10"
+msgstr "屏幕录制(&M)...\tShift+F10"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:9
 msgid "Select &Sol\tH"
@@ -5477,10 +5477,10 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "减慢时间流逝"
 
 #~ msgid "Accelerate Time (x2)"
-#~ msgstr "加快时间流逝 (× 2)"
+#~ msgstr "加快时间流逝 (×2)"
 
 #~ msgid "Decelerate Time (/2)"
-#~ msgstr "减慢时间流逝 (÷ 2)"
+#~ msgstr "减慢时间流逝 (÷2)"
 
 #~ msgid "Pause Time"
 #~ msgstr "暂停时间流逝"
@@ -5708,7 +5708,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "将帧速率与刷新率同步"
 
 #~ msgid "Grab Image"
-#~ msgstr "截图"
+#~ msgstr "屏幕快照"
 
 #~ msgid "OpenGL info"
 #~ msgstr "OpenGL 信息"
@@ -5721,7 +5721,7 @@ msgstr "打开 %s 时或 时出错。\n"
 
 #~ msgid ""
 #~ "This version of Celestia was not built with support for movie recording."
-#~ msgstr "此版本 Celestia 不支持录屏功能。"
+#~ msgstr "此版本 Celestia 不支持屏幕录制功能。"
 
 #~ msgid "Enter URL"
 #~ msgstr "输入 URL"
@@ -5734,7 +5734,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "天体: "
 
 #~ msgid "Longitude: "
-#~ msgstr "经度 :"
+#~ msgstr "经度: "
 
 #~ msgid "East"
 #~ msgstr "东"
@@ -5910,10 +5910,10 @@ msgstr "打开 %s 时或 时出错。\n"
 
 #~ msgid ""
 #~ "File %1 does not exist, using default configuration file %2/celestia.cfg"
-#~ msgstr "文件 %1 不存在，使用默认设置文件 %2/celestia.cfg"
+#~ msgstr "文件 %1 不存在，将使用默认设置文件 %2/celestia.cfg"
 
 #~ msgid "Directory %1 does not exist, using default %2"
-#~ msgstr "文件路径 %1 不存在，使用默认路径 %2"
+#~ msgstr "文件路径 %1 不存在，将使用默认路径 %2"
 
 #~ msgid "Extras directory %1 does not exist"
 #~ msgstr "附加路径 %1 不存在"
@@ -5951,22 +5951,22 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr " 已暂停"
 
 #~ msgid "Current size: %1 x %2"
-#~ msgstr "当前大小:%1 × %2"
+#~ msgstr "当前大小: %1×%2"
 
 #~ msgid "Current width: %1 x %2"
-#~ msgstr "当前宽度:%1 × %2"
+#~ msgstr "当前宽度: %1×%2"
 
 #~ msgid "Current height: %1 x %2"
-#~ msgstr "当前高度:%1 × %2"
+#~ msgstr "当前高度: %1×%2"
 
 #~ msgid "You must specify a file name."
 #~ msgstr "您必须指定文件名。"
 
 #~ msgid "Error initializing movie capture."
-#~ msgstr "录屏初始化发生错误。"
+#~ msgstr "屏幕录制初始化发生错误。"
 
 #~ msgid "  Recording"
-#~ msgstr "  正在录屏"
+#~ msgstr "  正在屏幕录制"
 
 #~ msgid "License file 'License.txt' is missing!"
 #~ msgstr "找不到许可文件 'License.txt'！"
@@ -5979,7 +5979,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "深空间物体标签"
 
 #~ msgid "Filter Stars"
-#~ msgstr "恒星筛选"
+#~ msgstr "恒星过滤"
 
 #, fuzzy
 #~ msgid "Coordinate grids"
@@ -6001,7 +6001,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr " 原语，"
 
 #~ msgid " materials "
-#~ msgstr " 材料 "
+#~ msgstr " 材质 "
 
 #~ msgid " unique)\n"
 #~ msgstr " 唯一的)\n"
@@ -6071,7 +6071,7 @@ msgstr "打开 %s 时或 时出错。\n"
 
 #, fuzzy
 #~ msgid "Lock "
-#~ msgstr "锁定"
+#~ msgstr "锁定 "
 
 #~ msgid "FOV: "
 #~ msgstr "FOV: "
