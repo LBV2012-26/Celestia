@@ -1239,7 +1239,7 @@ msgstr "片段程序出错 "
 
 #: ../src/celengine/fragmentprog.cpp:125
 msgid "Initializing NV fragment programs . . .\n"
-msgstr "正在对 NV 片段程序进行初始化...\n"
+msgstr "正在初始化 NV 片段程序...\n"
 
 #: ../src/celengine/fragmentprog.cpp:141
 msgid "All NV fragment programs loaded successfully.\n"
@@ -1247,7 +1247,7 @@ msgstr "所有 NV 片段程序加载成功。\n"
 
 #: ../src/celengine/fragmentprog.cpp:149
 msgid "Initializing ARB fragment programs . . .\n"
-msgstr "对 ARB 片段程序进行初始化...\n"
+msgstr "正在初始化 ARB 片段程序...\n"
 
 #: ../src/celengine/galaxy.cpp:193
 #, c-format
@@ -1324,19 +1324,19 @@ msgstr "警告: 重复定义 %s %s\n"
 
 #: ../src/celengine/solarsys.cpp:1265
 msgid "bad alternate surface"
-msgstr "可替换表面不正确"
+msgstr "可替换表面错误"
 
 #: ../src/celengine/solarsys.cpp:1280
 msgid "bad location"
-msgstr "地理位置不正确"
+msgstr "地理位置错误"
 
 #: ../src/celengine/stardb.cpp:558
 msgid "Bad header for cross index\n"
-msgstr "跨索引文件头不正确\n"
+msgstr "跨索引文件头错误\n"
 
 #: ../src/celengine/stardb.cpp:572
 msgid "Bad version for cross index\n"
-msgstr "跨索引文件文本不正确\n"
+msgstr "跨索引文件文本错误\n"
 
 #: ../src/celengine/stardb.cpp:592
 #, fuzzy, c-format
@@ -1346,7 +1346,7 @@ msgstr "加载跨索引文件失败——数据点 %u 错误\n"
 #: ../src/celengine/stardb.cpp:676
 #, fuzzy, c-format
 msgid "Bad spectral type in star database, star #%u\n"
-msgstr "恒星数据库中的恒星光谱型不正确，恒星编号 #%u\n"
+msgstr "恒星数据库中的恒星光谱型错误，恒星编号 #%u\n"
 
 #: ../src/celengine/stardb.cpp:691
 #, fuzzy, c-format
@@ -1365,7 +1365,7 @@ msgstr ".stc 文件出错 (行 %i): %s\n"
 
 #: ../src/celengine/stardb.cpp:779
 msgid "Invalid star: bad spectral type.\n"
-msgstr "无效恒星数据: 恒星光谱型不正确。\n"
+msgstr "无效恒星数据: 恒星光谱型错误。\n"
 
 #: ../src/celengine/stardb.cpp:788
 msgid "Invalid star: missing spectral type.\n"
@@ -1396,7 +1396,9 @@ msgstr "无效恒星数据: 缺少星等。\n"
 msgid ""
 "Invalid star: absolute (not apparent) magnitude must be specified for star "
 "near origin\n"
-msgstr "无效恒星数据: 必须输入接近原始的恒星的绝对星等 (非视星等)\n"
+msgstr ""
+"无效恒星数据: 必须输入接近原始的恒星的"
+"绝对星等 (非视星等)\n"
 
 #: ../src/celengine/stardb.cpp:1397
 #, c-format
@@ -1466,7 +1468,7 @@ msgstr "读取标题 %s 时出错。\n"
 #: ../src/celephem/samporbit.cpp:845 ../src/tools/xyzv2bin/bin2xyzv.cpp:31
 #, c-format
 msgid "Bad binary xyzv file %s.\n"
-msgstr "二进制 xyzv 文件 %s 不正确。"
+msgstr "二进制 xyzv 文件 %s 错误。"
 
 #: ../src/celephem/samporbit.cpp:851 ../src/tools/xyzv2bin/bin2xyzv.cpp:37
 #, c-format
@@ -1487,7 +1489,8 @@ msgstr "读取收藏夹中的文件时出错。"
 msgid ""
 "%s\n"
 "Orientation: [%f, %f, %f], %.1f\n"
-msgstr "%s\n"
+msgstr ""
+"%s\n"
 "方向: [%f，%f，%f]，%.1f\n"
 
 #: ../src/celestia/celestiacore.cpp:469
@@ -1744,16 +1747,16 @@ msgstr "已增加视窗"
 
 #: ../src/celestia/celestiacore.cpp:2760
 msgid "Mpc"
-msgstr ""
+msgstr "Mpc"
 
 #: ../src/celestia/celestiacore.cpp:2765
 msgid "kpc"
-msgstr ""
+msgstr "kpc"
 
 #: ../src/celestia/celestiacore.cpp:2770
 #: ../src/celestia/qt/qtselectionpopup.cpp:108
 msgid "ly"
-msgstr ""
+msgstr "ly"
 
 #. i18n: file: ../src/celestia/qt/gotoobjectdialog.ui:194
 #. i18n: ectx: property (text), widget (QRadioButton, auButton)
@@ -1769,12 +1772,12 @@ msgstr "AU"
 #: ../src/celestia/qt/qtinfopanel.cpp:212 ../src/celestia/qt/rc.cpp:30
 #: ../src/celestia/win32/res/resource_strings.cpp:133
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: ../src/celestia/celestiacore.cpp:2784 ../src/celestia/qt/qtinfopanel.cpp:122
 #, fuzzy
 msgid "m"
-msgstr ""
+msgstr "m"
 
 #: ../src/celestia/celestiacore.cpp:2804 ../src/celestia/qt/qtinfopanel.cpp:166
 #: ../src/celestia/qt/qtinfopanel.cpp:190
@@ -1806,22 +1809,22 @@ msgstr "自转周期: %s %s\n"
 #: ../src/celestia/celestiacore.cpp:2821
 #, fuzzy
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
 #: ../src/celestia/celestiacore.cpp:2823
 #, fuzzy
 msgid "km/s"
-msgstr ""
+msgstr "km/s"
 
 #: ../src/celestia/celestiacore.cpp:2827
 #, fuzzy
 msgid "AU/s"
-msgstr ""
+msgstr "AU/s"
 
 #: ../src/celestia/celestiacore.cpp:2829
 #, fuzzy
 msgid "ly/s"
-msgstr ""
+msgstr "ly/s"
 
 #: ../src/celestia/celestiacore.cpp:2831
 #, fuzzy, c-format
@@ -1846,7 +1849,7 @@ msgstr "绝对星等: %.1f\n"
 #: ../src/celestia/celestiacore.cpp:2992
 #, c-format
 msgid "%.6f%c %.6f%c %f km"
-msgstr ""
+msgstr "%.6f%c %.6f%c %f km"
 
 #: ../src/celestia/celestiacore.cpp:3018 ../src/celestia/celestiacore.cpp:3091
 #: ../src/celestia/celestiacore.cpp:3120 ../src/celestia/celestiacore.cpp:3201
@@ -1965,7 +1968,7 @@ msgstr " (已暂停)"
 #: ../src/celestia/celestiacore.cpp:3479
 #, fuzzy, c-format
 msgid "FPS: %.1f\n"
-msgstr ""
+msgstr "FLS: %.1f\n"
 
 #: ../src/celestia/celestiacore.cpp:3504
 #, fuzzy, c-format
@@ -2141,12 +2144,15 @@ msgid ""
 "Do you trust the script and want to allow this?\n"
 "\n"
 "y = yes, ESC = cancel script, any other key = no"
-msgstr "警告:\n"
+msgstr ""
+"警告:\n"
 "\n"
-"当前脚本正在请求读取/写入文件权限，并请求执行外部程序。允许该行为可能会对您的计算机产生危害。\n"
+"当前脚本正在请求读取/写入文件权限，"
+"并请求执行外部程序。允许该行为可能会对您的计算机产生"
+"危害。\n"
 "是否信任该脚本并允许该行为？\n"
 "\n"
-"Y - Yes ESC - 取消 其他任意键 - 否"
+"Y - 是，ESC - 取消，其他任意键 - 否"
 
 #: ../src/celestia/celx.cpp:1077
 msgid ""
@@ -2156,9 +2162,13 @@ msgid ""
 "and execute external programs. Allowing this can be\n"
 "dangerous.\n"
 "Do you trust the script and want to allow this?"
-msgstr "警告:\n"
+msgstr ""
+"警告:\n"
 "\n"
-"当前脚本正在请求读取/写入文件权限，并请求执行外部程序。允许该行为可能会对您的计算机产生危害。\n"
+"当前脚本正在请求读取/写入"
+"文件权限，并请求执行外部程序。允许该行为可能会"
+"对您的计算机产生"
+"危害。\n"
 "是否信任该脚本并允许该行为？\n"
 
 #: ../src/celestia/glutmain.cpp:520
@@ -2166,7 +2176,9 @@ msgstr "警告:\n"
 msgid ""
 "Celestia was unable to initialize OpenGL extensions (error %i). Graphics "
 "quality will be reduced."
-msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将降低。"
+msgstr ""
+"Celestia 无法初始化 OpenGL 扩展 (错误 %i)。"
+"图像质量将降低。"
 
 #. if (glGetError())
 #. result = [NSString stringWithFormat:NSLocalizedString(@"%@: --not available--",""), desc];
@@ -2174,7 +2186,7 @@ msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将降�
 #: ../src/celestia/macosx/CGLInfo.m:53
 #, objc-format
 msgid "%@: %d"
-msgstr ""
+msgstr "%@: %d"
 
 #: ../src/celestia/macosx/CGLInfo.m:60
 #, objc-format
@@ -2223,7 +2235,10 @@ msgid ""
 "instructions. \n"
 "\n"
 "Please correct this and try again."
-msgstr "\"CelestiaResources\" 目录没有被安装在说明中指示的正确位置。\n"
+msgstr ""
+"\"CelestiaResources\" 目录没有被"
+"安装在说明中指示的正确位置。\n"
+"\n"
 "请纠正该错误并重试。"
 
 #: ../src/celestia/macosx/CelestiaController.m:181
@@ -2240,14 +2255,18 @@ msgstr "致命错误"
 msgid ""
 "It appears you are running Celestia on %s hardware. Do you wish to install a "
 "workaround?"
-msgstr "您正尝试在 %s 的硬件上运行 Celestia。是否需要安装一个工作区？"
+msgstr ""
+"您正尝试在 %s 的硬件上运行 Celestia。是否需要安装一个"
+"工作区？"
 
 #: ../src/celestia/macosx/CelestiaController.m:324
 #, objc-format
 msgid ""
 "A shell script will be run to modify your %@, adding an IgnoreGLExtensions "
 "directive. This can prevent freezing issues."
-msgstr "我们将运行一个 Shell 脚本来修改您的 %@，并添加一个 IgnoreGLExtensions 指令。这可以防止冻结问题。"
+msgstr ""
+"我们将运行一个 Shell 脚本来修改您的 %@，并添加一个 IgnoreGLExtensions "
+"指令。这可以防止冻结问题。"
 
 #: ../src/celestia/macosx/CelestiaController.m:325
 msgid "Yes"
@@ -2271,7 +2290,9 @@ msgstr "您的原始 %@ 已经备份。"
 msgid ""
 "There was a problem installing the workaround. You can attempt to perform "
 "the workaround manually by following the instructions in the README."
-msgstr "安装工作区时出现了一个问题。您可以尝试按照自述文件去执行工作区手册。"
+msgstr ""
+"安装工作区时出现了一个问题。您可以尝试按照"
+" ReadMe 文件去执行工作区手册。"
 
 #: ../src/celestia/macosx/CelestiaController.m:467
 #, fuzzy
@@ -2333,7 +2354,7 @@ msgstr "请检查天体名称是否正确"
 #: ../src/celestia/macosx/Menu_Extensions.m:173
 #, fuzzy
 msgid "Show Alternate Surface"
-msgstr "替代表面(&A)"
+msgstr "替换表面(&A)"
 
 #: ../src/celestia/macosx/Menu_Extensions.m:269
 msgid "default"
@@ -2344,7 +2365,8 @@ msgstr "默认"
 msgid ""
 "Your system does not support\n"
 "%@"
-msgstr "您的系统不支持\n"
+msgstr ""
+"您的系统不支持\n"
 "%@"
 
 #: ../src/celestia/macosx/SetTimeWindowController.m:63
@@ -2358,13 +2380,13 @@ msgstr "请输入日期或时间"
 
 #: ../src/celestia/macosx/SetTimeWindowController.m:212
 msgid "Improper Date or Time Format"
-msgstr "日期或时间格式不正确"
+msgstr "日期或时间格式错误"
 
 #: ../src/celestia/macosx/SetTimeWindowController.m:213
 msgid "Please enter the date as \"mm/dd/yyyy\" and the time as \"hh:mm:ss\"."
 msgstr "请按照相应的格式输入日期和时间。\n"
 "日期格式: \"mm/dd/yyyy\"\n"
-"时间格式: \"hh:mm:ss\""
+"时间格式: \"mm/dd/yyyy\"\n"
 
 #: ../src/celestia/oggtheoracapture.cpp:162
 #, c-format
@@ -2404,20 +2426,26 @@ msgstr "自定义"
 msgid ""
 "Celestia is unable to run because the data directroy was not found, probably "
 "due to improper installation."
-msgstr "可能由于安装不当，Celestia 无法找到数据目录，无法运行。"
+msgstr ""
+"可能由于安装不当，Celestia 无法"
+"找到数据目录，无法运行。"
 
 #: ../src/celestia/qt/qtappwin.cpp:249
 msgid ""
 "Celestia is unable to run because the CelestiaResources folder was not "
 "found, probably due to improper installation."
-msgstr "可能由于安装不当，Celestia 找不到 CelestiaResources 文件夹，无法运行。"
+msgstr ""
+"可能由于安装不当，Celestia 找不到"
+" CelestiaResources 文件夹，无法运行。"
 
 #: ../src/celestia/qt/qtappwin.cpp:291
 #, qt-format
 msgid ""
 "Celestia was unable to initialize OpenGL extensions (error %1). Graphics "
 "quality will be reduced."
-msgstr "Celestia 无法初始化 OpenGL 扩展 (错误 %i)。图像质量将降低。"
+msgstr ""
+"Celestia 无法初始化 OpenGL 扩展 (错误 %i)。"
+"图像质量将降低。"
 
 #: ../src/celestia/qt/qtappwin.cpp:309
 msgid "Celestial Browser"
@@ -2576,6 +2604,16 @@ msgid ""
 "CelestiaProject/Celestia\">https://github.com/CelestiaProject/Celestia</"
 "a><br></html>"
 msgstr ""
+"<html><p><b>Celestia 1.7.0 (Qt5 beta 版本，提交 %1)</b></"
+"p><p>版权:  (C) 2001-2018 Celestia 开发团队。Celestia 是"
+"免费软件. 您可以根据 GNU 通用公共许 2 可对其进行"
+"修改。</p><b>Celestia 官网网站</"
+"b><br>主页: <a href=\"https://celestia.space/\">https://celestia.space/"
+"</a><br>论坛: <a href=\"https://celestia.space/forum/\">https://celestia."
+"space/forum/</a><br>GitHub: <a href=\"https://github.com/"
+"CelestiaProject/Celestia\">https://github.com/CelestiaProject/Celestia</"
+"a><br></html>"」
+- - - - - - - - - - - - - - -
 
 #. Get the version string
 #. QTextStream::operator<<(const char *string) assumes that the string has
@@ -2625,7 +2663,8 @@ msgstr "捕捉图像(&G)"
 #: ../src/celestia/qt/qtappwin.cpp:1167
 #, fuzzy
 msgid "F10"
-msgstr ""
+msgstr "F10"
+
 
 #: ../src/celestia/qt/qtappwin.cpp:1172
 #, fuzzy
@@ -2635,7 +2674,7 @@ msgstr "屏幕录制(&V)"
 #: ../src/celestia/qt/qtappwin.cpp:1177
 #, fuzzy
 msgid "Shift+F10"
-msgstr ""
+msgstr "Shift+F10"
 
 #: ../src/celestia/qt/qtappwin.cpp:1181
 #, fuzzy
@@ -2645,7 +2684,7 @@ msgstr "复制图像(&C)"
 #: ../src/celestia/qt/qtappwin.cpp:1182
 #, fuzzy
 msgid "Ctrl+Shift+C"
-msgstr ""
+msgstr "Ctrl+Shift+C"
 
 #: ../src/celestia/qt/qtappwin.cpp:1186
 #, fuzzy
@@ -2675,7 +2714,7 @@ msgstr "退出(&X)"
 #: ../src/celestia/qt/qtappwin.cpp:1214
 #, fuzzy
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Ctrl+Q"
 
 #. ***** Navigation menu *****
 #: ../src/celestia/qt/qtappwin.cpp:1219
@@ -2771,7 +2810,7 @@ msgstr "垂直分割视窗"
 #: ../src/celestia/qt/qtappwin.cpp:1310
 #, fuzzy
 msgid "Ctrl+R"
-msgstr ""
+msgstr "Ctrl+R"
 
 #: ../src/celestia/qt/qtappwin.cpp:1315
 #, fuzzy
@@ -2781,7 +2820,7 @@ msgstr "水平分割视窗"
 #: ../src/celestia/qt/qtappwin.cpp:1316
 #, fuzzy
 msgid "Ctrl+U"
-msgstr ""
+msgstr "Ctrl+U"
 
 #: ../src/celestia/qt/qtappwin.cpp:1321
 #, fuzzy
@@ -2790,7 +2829,7 @@ msgstr "切换视窗"
 
 #: ../src/celestia/qt/qtappwin.cpp:1322
 msgid "Tab"
-msgstr ""
+msgstr "Tab"
 
 #: ../src/celestia/qt/qtappwin.cpp:1327
 #, fuzzy
@@ -2800,7 +2839,7 @@ msgstr "单视窗"
 #: ../src/celestia/qt/qtappwin.cpp:1328
 #, fuzzy
 msgid "Ctrl+D"
-msgstr ""
+msgstr "Ctrl+D"
 
 #: ../src/celestia/qt/qtappwin.cpp:1333
 #, fuzzy
@@ -2866,7 +2905,9 @@ msgstr "FPS 值"
 msgid ""
 "Loading data files: %1\n"
 "\n"
-msgstr "正在加载数据文件: %1\n"
+msgstr ""
+"正在加载数据文件: %1\n"
+"\n"
 
 #: ../src/celestia/qt/qtappwin.cpp:1565
 #: ../src/celestia/win32/res/resource_strings.cpp:3
@@ -2937,7 +2978,7 @@ msgstr "新建文件夹"
 #. Create the render flags actions
 #: ../src/celestia/qt/qtcelestiaactions.cpp:25
 msgid "Eq"
-msgstr ""
+msgstr "Eq"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:26
 #, fuzzy
@@ -2946,7 +2987,7 @@ msgstr "赤道坐标网格"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:30
 msgid "Ga"
-msgstr ""
+msgstr "Ga"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:31
 #, fuzzy
@@ -2955,7 +2996,7 @@ msgstr "银河坐标网格"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:35
 msgid "Ec"
-msgstr ""
+msgstr "Ec"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:36
 #, fuzzy
@@ -2964,7 +3005,7 @@ msgstr "黄道坐标网格"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:40
 msgid "Hz"
-msgstr ""
+msgstr "Hz"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:41
 #, fuzzy
@@ -2973,7 +3014,7 @@ msgstr "地平座标网格"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:45
 msgid "Ecl"
-msgstr ""
+msgstr "Ecl"
 
 #. i18n: file: ../src/celestia/qt/preferences.ui:461
 #. i18n: ectx: property (text), widget (QCheckBox, eclipticLineCheck)
@@ -2985,7 +3026,7 @@ msgstr "黄道线"
 #: ../src/celestia/qt/qtcelestiaactions.cpp:50
 #, fuzzy
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #. Controls for marking selected objects
 #. i18n: file: ../src/celestia/qt/preferences.ui:454
@@ -3003,7 +3044,7 @@ msgstr "标记"
 #: ../src/celestia/qt/qtcelestiaactions.cpp:55
 #, fuzzy
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #. i18n: file: ../src/celestia/qt/preferences.ui:405
 #. i18n: ectx: property (title), widget (QGroupBox, constellationsGroupBox)
@@ -3019,7 +3060,7 @@ msgstr "星座"
 #: ../src/celestia/qt/qtcelestiaactions.cpp:60
 #, fuzzy
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: ../src/celestia/qt/qtcelestiaactions.cpp:61
 #, fuzzy
@@ -3029,7 +3070,7 @@ msgstr "星座边界线"
 #: ../src/celestia/qt/qtcelestiaactions.cpp:65
 #, fuzzy
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #. i18n: file: ../src/celestia/qt/preferences.ui:236
 #. i18n: ectx: property (title), widget (QGroupBox, orbitsGroupBox)
@@ -3131,7 +3172,7 @@ msgstr "航天器"
 #: ../src/celestia/qt/qtcelestiaactions.cpp:105
 #, fuzzy
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #. i18n: file: ../src/celestia/qt/preferences.ui:487
 #. i18n: ectx: attribute (title), widget (QWidget, labelsTab)
@@ -3414,7 +3455,7 @@ msgstr "取消标记已选中的天体"
 #: ../src/celestia/qt/qtcelestialbrowser.cpp:565
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:716
 msgid "Unmark stars selected in list view"
-msgstr ""
+msgstr "取消标记在列表视图中选择的恒星"
 
 #: ../src/celestia/qt/qtcelestialbrowser.cpp:569
 #: ../src/celestia/qt/qtdeepskybrowser.cpp:486
@@ -3469,7 +3510,7 @@ msgstr "+"
 #: ../src/celestia/qt/qtselectionpopup.cpp:244
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:732
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: ../src/celestia/qt/qtcelestialbrowser.cpp:582
 #: ../src/celestia/qt/qtdeepskybrowser.cpp:499
@@ -3691,7 +3732,7 @@ msgstr "<b>周期:</b> %L1 %2"
 #: ../src/celestia/qt/qtinfopanel.cpp:207
 #, fuzzy
 msgid "AU"
-msgstr ""
+msgstr "U"
 
 #: ../src/celestia/qt/qtinfopanel.cpp:215
 #, fuzzy, qt-format
@@ -3753,16 +3794,16 @@ msgstr "<b>赤纬:</b> %L1%2 %L3' %L4\""
 #: ../src/celestia/qt/qtinfopanel.cpp:298
 #, fuzzy, qt-format
 msgid "<b>L:</b> %L1%2 %L3' %L4\""
-msgstr ""
+msgstr "<b>L:</b> %L1%2 %L3' %L4\""
 
 #: ../src/celestia/qt/qtinfopanel.cpp:301
 #, fuzzy, qt-format
 msgid "<b>B:</b> %L1%2 %L3' %L4\""
-msgstr ""
+msgstr "<b>B:</b> %L1%2 %L3' %L4\""
 
 #: ../src/celestia/qt/qtpreferencesdialog.cpp:168
 msgid "OpenGL 2.0"
-msgstr ""
+msgstr "OpenGL 2.0"
 
 #: ../src/celestia/qt/qtpreferencesdialog.cpp:208
 msgid "Blackbody D65"
@@ -3901,7 +3942,7 @@ msgstr "显示明暗边界线(&T)"
 #: ../src/celestia/qt/qtselectionpopup.cpp:339
 #: ../src/celestia/win32/winmain.cpp:1658
 msgid "&Alternate Surfaces"
-msgstr "替代表面(&A)"
+msgstr "替换表面(&A)"
 
 #: ../src/celestia/qt/qtselectionpopup.cpp:340
 msgid "Normal"
@@ -3979,7 +4020,7 @@ msgstr "设置时"
 #: ../src/celestia/qt/qtsettimedialog.cpp:119
 #: ../src/celestia/qt/qtsettimedialog.cpp:123
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: ../src/celestia/qt/qtsettimedialog.cpp:120
 #, fuzzy
@@ -4515,7 +4556,7 @@ msgstr "最小标签大小"
 #. i18n: ectx: property (inputMask), widget (QLineEdit, featureSizeEdit)
 #: ../src/celestia/qt/rc.cpp:300
 msgid "000; "
-msgstr ""
+msgstr "000; "
 
 #. i18n: file: ../src/celestia/qt/preferences.ui:801
 #. i18n: ectx: attribute (title), widget (QWidget, renderTab)
@@ -4875,7 +4916,7 @@ msgstr "版权所有 (C) 2001-2009, Celestia 开发团队"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:74
 msgid "https://celestia.space/"
-msgstr ""
+msgstr "https://celestia.space/"
 
 #: ../src/celestia/win32/res/resource_strings.cpp:75
 msgid "Celestia is free software and comes with absolutely no warranty."
@@ -5684,28 +5725,28 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "多重纹理"
 
 #~ msgid "NvCombiners"
-#~ msgstr ""
+#~ msgstr "NvCombiners"
 
 #~ msgid "DOT3 ARBVP"
-#~ msgstr ""
+#~ msgstr "DOT 3 ARBVP"
 
 #~ msgid "NvCombiner NvVP"
-#~ msgstr ""
+#~ msgstr "NvCombiners NvVP"
 
 #~ msgid "NvCombiner ARBVP"
-#~ msgstr ""
+#~ msgstr "NvCombiners ARBVP"
 
 #~ msgid "ARBFP ARBVP"
-#~ msgstr ""
+#~ msgstr "ARBFP ARBVP"
 
 #~ msgid "NV30"
-#~ msgstr ""
+#~ msgstr "NV30"
 
 #~ msgid "Cycle OpenGL Render Path"
 #~ msgstr "切换 OpenGL 渲染通道"
 
 #~ msgid "Sync framerate to video refresh rate"
-#~ msgstr "将帧速率与刷新率同步"
+#~ msgstr "启用垂直同步"
 
 #~ msgid "Grab Image"
 #~ msgstr "屏幕快照"
@@ -5717,11 +5758,12 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "显示书签工具栏"
 
 #~ msgid "UTC"
-#~ msgstr "国际统一标准时间"
+#~ msgstr "UTC"
 
 #~ msgid ""
 #~ "This version of Celestia was not built with support for movie recording."
-#~ msgstr "此版本 Celestia 不支持屏幕录制功能。"
+#~ msgstr ""
+#~"此版本 Celestia 不支持屏幕录制功能。"
 
 #~ msgid "Enter URL"
 #~ msgstr "输入 URL"
@@ -5910,7 +5952,8 @@ msgstr "打开 %s 时或 时出错。\n"
 
 #~ msgid ""
 #~ "File %1 does not exist, using default configuration file %2/celestia.cfg"
-#~ msgstr "文件 %1 不存在，将使用默认设置文件 %2/celestia.cfg"
+#~ msgstr ""
+#~"文件 %1 不存在，将使用默认设置文件 %2/celestia.cfg"
 
 #~ msgid "Directory %1 does not exist, using default %2"
 #~ msgstr "文件路径 %1 不存在，将使用默认路径 %2"
@@ -6217,7 +6260,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "关闭(&C)"
 
 #~ msgid "Alt+C"
-#~ msgstr ""
+#~ msgstr "Alt+C"
 
 #~ msgid "End"
 #~ msgstr "结束"
