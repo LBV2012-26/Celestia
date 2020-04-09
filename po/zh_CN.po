@@ -1315,7 +1315,7 @@ msgstr ".ssc 文件出错 (行 %d): "
 #: ../src/celengine/solarsys.cpp:1218 ../src/celengine/solarsys.cpp:1286
 #, c-format
 msgid "parent body '%s' of '%s' not found.\n"
-msgstr "找不到 '%s' 的上级天体 '%s'。\n"
+msgstr "找不到 '%s' 的父级天体 '%s'。\n"
 
 #: ../src/celengine/solarsys.cpp:1229
 #, fuzzy, c-format
@@ -1968,7 +1968,7 @@ msgstr " (已暂停)"
 #: ../src/celestia/celestiacore.cpp:3479
 #, fuzzy, c-format
 msgid "FPS: %.1f\n"
-msgstr "FLS: %.1f\n"
+msgstr "FPS: %.1f\n"
 
 #: ../src/celestia/celestiacore.cpp:3504
 #, fuzzy, c-format
@@ -2152,7 +2152,7 @@ msgstr ""
 "危害。\n"
 "是否信任该脚本并允许该行为？\n"
 "\n"
-"Y - 是，ESC - 取消，其他任意键 - 否"
+"Y - 是，Esc - 取消，其他任意键 - 否"
 
 #: ../src/celestia/celx.cpp:1077
 msgid ""
@@ -2606,7 +2606,7 @@ msgid ""
 msgstr ""
 "<html><p><b>Celestia 1.7.0 (Qt5 beta 版本，提交 %1)</b></"
 "p><p>版权:  (C) 2001-2018 Celestia 开发团队。Celestia 是"
-"免费软件. 您可以根据 GNU 通用公共许 2 可对其进行"
+"免费软件。您可以根据 GNU 通用公共许 2 可对其进行"
 "修改。</p><b>Celestia 官网网站</"
 "b><br>主页: <a href=\"https://celestia.space/\">https://celestia.space/"
 "</a><br>论坛: <a href=\"https://celestia.space/forum/\">https://celestia."
@@ -3593,7 +3593,7 @@ msgstr "取消标记在列表中选中的深空天体"
 #: ../src/celestia/qt/qteventfinder.cpp:473
 #, fuzzy
 msgid "Eclipsed body"
-msgstr "上级天体"
+msgstr "被遮挡天体"
 
 #: ../src/celestia/qt/qteventfinder.cpp:475
 msgid "Occulter"
@@ -5472,7 +5472,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "在当前菜单中建立书签文件夹"
 
 #~ msgid "Can't add bookmark with empty URL"
-#~ msgstr "空 URL 不能添加到书签中"
+#~ msgstr "空 URL 不能被添加到书签中"
 
 #~ msgid ""
 #~ "Something seems to be wrong with your installation of Celestia. The "
@@ -5929,9 +5929,9 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ "Radeon graphics card, though NvCombiner ARBVP is a slightly better option "
 #~ "for Geforce users"
 #~ msgstr ""
-#~ "<b>NVIDIA 组合渲染，NV顶点程序扩展</b><br>对于 GeForce 或 AMD Radeon 显卡"
-#~ "提供特效，包括凹凸映射（bump mapping），环状阴影（ring shadows）和反射突显"
-#~ "（specular highlights）。即使你是 GeForce 用户，选用 NvCombiner ARBVP 效果"
+#~ "<b>NVIDIA 组合渲染，NV 顶点程序扩展</b><br>对于 GeForce 或 AMD Radeon 显卡"
+#~ "提供特效，包括凹凸纹理，光环投影和高光。"
+#~ "即使你是 GeForce 用户，选用 NvCombiner ARBVP 效果"
 #~ "会稍好一点。"
 
 #~ msgid "<b>NVIDIA Combiners, ARB_vertex_program extension</b>"
@@ -5948,7 +5948,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "<b>NV 片段程序和 ARB 顶点程序扩展</b>"
 
 #~ msgid "<b>OpenGL 2.0 Shading Language</b>"
-#~ msgstr "<b>OpenGL 2.0 Shading 语言</b>"
+#~ msgstr "<b>OpenGL 2.0 着色语言</b>"
 
 #~ msgid ""
 #~ "File %1 does not exist, using default configuration file %2/celestia.cfg"
@@ -6053,7 +6053,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "' 找不到。"
 
 #~ msgid "parent body '"
-#~ msgstr "上级天体 '"
+#~ msgstr "父级天体 '"
 
 #~ msgid "' not found.\n"
 #~ msgstr "' 找不到。\n"
