@@ -1403,7 +1403,7 @@ msgstr ""
 #: ../src/celengine/stardb.cpp:1397
 #, c-format
 msgid "Level %i, %.5f ly, %i nodes, %i  stars\n"
-msgstr "等级: %i，%.5f ly，%i 节点，%i 恒星\n"
+msgstr "等级 %i，%.5f ly，%i 节点，%i 恒星\n"
 
 #: ../src/celengine/texture.cpp:929
 #, fuzzy, c-format
@@ -2236,7 +2236,7 @@ msgid ""
 "\n"
 "Please correct this and try again."
 msgstr ""
-"\"CelestiaResources\" 目录没有被"
+"CelestiaResources 目录没有被"
 "安装在说明中指示的正确位置。\n"
 "\n"
 "请纠正该错误并重试。"
@@ -2386,7 +2386,7 @@ msgstr "日期或时间格式错误"
 msgid "Please enter the date as \"mm/dd/yyyy\" and the time as \"hh:mm:ss\"."
 msgstr "请按照相应的格式输入日期和时间。\n"
 "日期格式: \"mm/dd/yyyy\"\n"
-"时间格式: \"mm/dd/yyyy\"\n"
+"时间格式: mm/dd/yyyy\n"
 
 #: ../src/celestia/oggtheoracapture.cpp:162
 #, c-format
@@ -2605,14 +2605,14 @@ msgid ""
 "a><br></html>"
 msgstr ""
 "<html><p><b>Celestia 1.7.0 (Qt5 beta 版本，提交 %1)</b></"
-"p><p>版权:  (C) 2001-2018 Celestia 开发团队。Celestia 是"
+"p><p>Copyright (C) 2001-2018 by the Celestia Development Team。Celestia 是"
 "免费软件。您可以根据 GNU 通用公共许 2 可对其进行"
 "修改。</p><b>Celestia 官网网站</"
 "b><br>主页: <a href=\"https://celestia.space/\">https://celestia.space/"
 "</a><br>论坛: <a href=\"https://celestia.space/forum/\">https://celestia."
 "space/forum/</a><br>GitHub: <a href=\"https://github.com/"
 "CelestiaProject/Celestia\">https://github.com/CelestiaProject/Celestia</"
-"a><br></html>"」
+"a><br></html>"
 - - - - - - - - - - - - - - -
 
 #. Get the version string
@@ -3443,7 +3443,7 @@ msgstr "标记已选中的天体"
 #: ../src/celestia/qt/qtcelestialbrowser.cpp:561
 #, fuzzy
 msgid "Mark stars selected in list view"
-msgstr "标记在列表中选定的恒星"
+msgstr "标记在列表视图中所选的恒星"
 
 #: ../src/celestia/qt/qtcelestialbrowser.cpp:564
 #: ../src/celestia/qt/qtdeepskybrowser.cpp:481
@@ -3583,12 +3583,12 @@ msgstr "找到天体 %1"
 
 #: ../src/celestia/qt/qtdeepskybrowser.cpp:477
 msgid "Mark DSOs selected in list view"
-msgstr "标记在列表中选中的深空天体"
+msgstr "标记在列表视图所选的深空天体"
 
 #: ../src/celestia/qt/qtdeepskybrowser.cpp:482
 #, fuzzy
 msgid "Unmark DSOs selected in list view"
-msgstr "取消标记在列表中选中的深空天体"
+msgstr "取消标记在列表视图中所选的深空天体"
 
 #: ../src/celestia/qt/qteventfinder.cpp:473
 #, fuzzy
@@ -3835,7 +3835,7 @@ msgstr "距离: "
 
 #: ../src/celestia/qt/qtselectionpopup.cpp:122
 msgid "Abs (app) mag: "
-msgstr "绝对/视星等: "
+msgstr "绝对星等 (视星等): "
 
 #: ../src/celestia/qt/qtselectionpopup.cpp:125
 msgid "Class: "
@@ -4138,7 +4138,7 @@ msgstr "按类别对天体分组"
 
 #: ../src/celestia/qt/qtsolarsystembrowser.cpp:712
 msgid "Mark bodies selected in list view"
-msgstr "标记在列表中选定的天体"
+msgstr "标记在列表中所选的天体"
 
 #: ../src/celestia/qt/qttimetoolbar.cpp:30
 #: ../src/celestia/qt/qttimetoolbar.cpp:45
@@ -5433,7 +5433,7 @@ msgstr "与 UTC 的差异"
 #: ../src/tools/xyzv2bin/bin2xyzv.cpp:18
 #, fuzzy, c-format
 msgid "Error openning %s or .\n"
-msgstr "打开 %s 时或 时出错。\n"
+msgstr "错误打开 %s 或 。\n"
 
 #~ msgid "Invisible"
 #~ msgstr "不可见"
@@ -5760,10 +5760,8 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgid "UTC"
 #~ msgstr "UTC"
 
-#~ msgid ""
-#~ "This version of Celestia was not built with support for movie recording."
-#~ msgstr ""
-#~"此版本 Celestia 不支持屏幕录制功能。"
+#~ msgid "This version of Celestia was not built with support for movie recording."
+#~ msgstr "此版本 Celestia 不支持屏幕录制功能。"
 
 #~ msgid "Enter URL"
 #~ msgstr "输入 URL"
@@ -6009,7 +6007,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "屏幕录制初始化发生错误。"
 
 #~ msgid "  Recording"
-#~ msgstr "  正在屏幕录制"
+#~ msgstr "  正在录制"
 
 #~ msgid "License file 'License.txt' is missing!"
 #~ msgstr "找不到许可文件 'License.txt'！"
@@ -6289,7 +6287,7 @@ msgstr "打开 %s 时或 时出错。\n"
 #~ msgstr "使用不同的安装目录"
 
 #~ msgid "Use as additional \"extras\" directory"
-#~ msgstr "作为附加 \"extras\" 文件目录"
+#~ msgstr "作为附加 extras 文件目录"
 
 #~ msgid "Start fullscreen"
 #~ msgstr "启动全屏模式"
